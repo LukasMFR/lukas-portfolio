@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754" role="img" aria-labelledby="title desc">
+  <title id="title">CV placeholder</title>
+  <desc id="desc">Placeholder CV for Lukas Mauffre portfolio.</desc>
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1240" height="1754" fill="#eef3f8" />
+  <rect x="86" y="86" width="1068" height="1582" rx="52" fill="#ffffff" stroke="#d0dce8" stroke-width="6" />
+  <rect x="86" y="86" width="1068" height="286" rx="52" fill="url(#g)" />
+  <text x="170" y="214" fill="#f8fbff" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="78" font-weight="700">
+    Lukas Mauffre
+  </text>
+  <text x="170" y="286" fill="#dbeafe" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="38">
+    CV placeholder
+  </text>
+  <text x="170" y="450" fill="#112033" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="40" font-weight="700">
+    Replace this file with your final resume
+  </text>
+  <text x="170" y="526" fill="#42556d" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28">
+    Target path:
+  </text>
+  <text x="170" y="578" fill="#0f766e" font-family="'SFMono-Regular', 'Menlo', monospace" font-size="30">
+    assets/cv/Lukas_Mauffre_CV.pdf
+  </text>
+  <text x="170" y="692" fill="#112033" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="36" font-weight="700">
+    Why this placeholder exists
+  </text>
+  <text x="170" y="754" fill="#42556d" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28">
+    The portfolio is immediately usable locally and on GitHub Pages without broken CV links.
+  </text>
+  <text x="170" y="892" fill="#112033" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="36" font-weight="700">
+    Next step
+  </text>
+  <text x="170" y="954" fill="#42556d" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28">
+    Export your real resume to PDF and overwrite the file while keeping the same name.
+  </text>
+  <rect x="170" y="1104" width="900" height="232" rx="32" fill="#f7fafc" stroke="#dbe5ef" stroke-width="4" />
+  <text x="620" y="1208" fill="#112033" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="48" font-weight="700" text-anchor="middle">
+    Static portfolio ready for deployment
+  </text>
+  <text x="620" y="1276" fill="#64748b" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28" text-anchor="middle">
+    HTML + CSS + JavaScript only
+  </text>
+  <text x="620" y="1322" fill="#64748b" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28" text-anchor="middle">
+    Optimised for direct opening and GitHub Pages
+  </text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-labelledby="title desc">
+  <title id="title">OMNES London placeholder logo</title>
+  <desc id="desc">Placeholder logo panel for OMNES Education London School.</desc>
+  <rect width="480" height="320" rx="42" fill="#fff7ed" />
+  <rect x="18" y="18" width="444" height="284" rx="28" fill="#172554" />
+  <text x="240" y="134" fill="#f8fafc" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="54" font-weight="700" text-anchor="middle">
+    OMNES
+  </text>
+  <text x="240" y="188" fill="#dbeafe" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28" text-anchor="middle">
+    London School
+  </text>
+  <text x="240" y="230" fill="#93c5fd" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="22" text-anchor="middle">
+    Placeholder logo
+  </text>
+</svg>

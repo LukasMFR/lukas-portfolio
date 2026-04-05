@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Lukas Mauffre portfolio favicon</title>
+  <desc id="desc">Shield-shaped favicon with LM initials.</desc>
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#09121d" />
+  <path d="M64 18 26 34v29c0 25 16 47 38 54 22-7 38-29 38-54V34L64 18Z" fill="url(#g)" />
+  <path d="M46 80V46h8v27h16v7H46Zm28 0V46h8v34h-8Z" fill="#f7fbff" />
+</svg>

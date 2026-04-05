@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-labelledby="title desc">
+  <title id="title">UFCV placeholder logo</title>
+  <desc id="desc">Placeholder logo panel for UFCV.</desc>
+  <rect width="480" height="320" rx="42" fill="#ecfeff" />
+  <rect x="18" y="18" width="444" height="284" rx="28" fill="#164e63" />
+  <text x="240" y="148" fill="#f0fdfa" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="88" font-weight="700" text-anchor="middle">
+    UFCV
+  </text>
+  <text x="240" y="204" fill="#a5f3fc" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28" text-anchor="middle">
+    Placeholder logo
+  </text>
+</svg>
