@@ -215,12 +215,19 @@
             aria-label="${menuLabel}"
             data-menu-toggle
           >
-            ${icon(state.menuOpen ? "close" : "menu")}
+            <span data-menu-toggle-icon>
+              ${icon(state.menuOpen ? "close" : "menu")}
+            </span>
           </button>
         </div>
       </div>
 
-      <div class="mobile-menu ${state.menuOpen ? "is-open" : ""}" id="mobile-menu">
+      <div
+        class="mobile-menu ${state.menuOpen ? "is-open" : ""}"
+        id="mobile-menu"
+        aria-hidden="${state.menuOpen ? "false" : "true"}"
+        data-mobile-menu
+      >
         <ul class="mobile-nav-links">${mobileNavLinks}</ul>
         <div class="mobile-actions">
           ${renderLanguageSwitch()}
@@ -231,6 +238,7 @@
 
     updateHeaderScrolledState();
     bindHeaderInteractions();
+    syncMenuState();
   }
 
   function renderHero() {
@@ -729,9 +737,41 @@
 
   function closeMenu() {
     if (!state.menuOpen) return;
-    state.menuOpen = false;
-    renderHeader();
+    setMenuOpen(false);
+  }
+
+  function setMenuOpen(nextOpen) {
+    state.menuOpen = Boolean(nextOpen);
+    syncMenuState();
     applyActiveNav();
+  }
+
+  function syncMenuState() {
+    if (!elements.header) return;
+
+    const menuToggle = elements.header.querySelector("[data-menu-toggle]");
+    const menuToggleIcon = elements.header.querySelector("[data-menu-toggle-icon]");
+    const mobileMenu = elements.header.querySelector("[data-mobile-menu]");
+    const menuLabel = translate({
+      en: state.menuOpen ? data.navigation.closeMenuLabel.en : data.navigation.mobileMenuLabel.en,
+      fr: state.menuOpen ? data.navigation.closeMenuLabel.fr : data.navigation.mobileMenuLabel.fr,
+    });
+
+    elements.header.classList.toggle("is-menu-open", state.menuOpen);
+
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", state.menuOpen ? "true" : "false");
+      menuToggle.setAttribute("aria-label", menuLabel);
+    }
+
+    if (menuToggleIcon) {
+      menuToggleIcon.innerHTML = icon(state.menuOpen ? "close" : "menu");
+    }
+
+    if (mobileMenu) {
+      mobileMenu.classList.toggle("is-open", state.menuOpen);
+      mobileMenu.setAttribute("aria-hidden", state.menuOpen ? "false" : "true");
+    }
   }
 
   function isElementNearViewport(element) {
@@ -771,10 +811,10 @@
 
     const menuToggle = elements.header.querySelector("[data-menu-toggle]");
     if (menuToggle) {
-      menuToggle.addEventListener("click", () => {
-        state.menuOpen = !state.menuOpen;
-        renderHeader();
-        applyActiveNav();
+      menuToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setMenuOpen(!state.menuOpen);
       });
     }
 
@@ -976,5 +1016,9 @@
     applyLanguage(detectBrowserLanguage());
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
