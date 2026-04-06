@@ -26,7 +26,6 @@
     skipLink: document.querySelector(".skip-link"),
   };
 
-  const STORAGE_KEY = "lukas-portfolio-language";
   const SECTION_IDS = ["home", "about", "skills", "projects", "contact"];
   const SUPPORTED_LANGUAGES = new Set(["en", "fr"]);
 
@@ -45,22 +44,6 @@
     return Array.isArray(translated) ? translated : [];
   }
 
-  function safeStorageGet(key) {
-    try {
-      return window.localStorage.getItem(key);
-    } catch (error) {
-      return null;
-    }
-  }
-
-  function safeStorageSet(key, value) {
-    try {
-      window.localStorage.setItem(key, value);
-    } catch (error) {
-      // Ignore storage failures when opening the portfolio locally.
-    }
-  }
-
   function isExternal(href) {
     return /^https?:\/\//.test(href);
   }
@@ -70,7 +53,7 @@
   }
 
   function normalizeLanguage(lang) {
-    return SUPPORTED_LANGUAGES.has(lang) ? lang : "en";
+    return SUPPORTED_LANGUAGES.has(lang) ? lang : "fr";
   }
 
   function closestFromTarget(target, selector) {
@@ -758,7 +741,7 @@
 
     elements.header.querySelectorAll("[data-lang-switch]").forEach((button) => {
       button.addEventListener("click", () => {
-        applyLanguage(button.dataset.lang, { persist: true });
+        applyLanguage(button.dataset.lang);
       });
     });
 
@@ -933,22 +916,8 @@
     step();
   }
 
-  function getStoredLanguage() {
-    const saved = safeStorageGet(STORAGE_KEY);
-    return SUPPORTED_LANGUAGES.has(saved) ? saved : null;
-  }
-
-  function getInitialLanguage() {
-    return getStoredLanguage() || "fr";
-  }
-
-  function applyLanguage(lang, options = {}) {
+  function applyLanguage(lang) {
     const nextLanguage = normalizeLanguage(lang);
-    const persist = options.persist !== false;
-
-    if (persist) {
-      safeStorageSet(STORAGE_KEY, nextLanguage);
-    }
 
     state.language = nextLanguage;
     renderApp();
@@ -956,7 +925,7 @@
 
   function init() {
     setupGlobalListeners();
-    applyLanguage(getInitialLanguage(), { persist: false });
+    applyLanguage("fr");
   }
 
   document.addEventListener("DOMContentLoaded", init);
