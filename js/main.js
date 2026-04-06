@@ -6,7 +6,7 @@
   }
 
   const state = {
-    lang: "en",
+    language: "en",
     menuOpen: false,
     typewriterTimer: null,
     revealObserver: null,
@@ -30,12 +30,12 @@
   const SECTION_IDS = ["home", "about", "skills", "projects", "contact"];
   const SUPPORTED_LANGUAGES = new Set(["en", "fr"]);
 
-  function translate(value) {
+  function translate(value, language = state.language) {
     if (value === null || value === undefined) return "";
     if (typeof value === "string") return value;
     if (Array.isArray(value)) return value;
     if (typeof value === "object") {
-      return value[state.lang] ?? value.en ?? "";
+      return value[language] ?? value.en ?? value.fr ?? "";
     }
     return String(value);
   }
@@ -139,22 +139,22 @@
   }
 
   function renderLanguageSwitch() {
-    const label = state.lang === "fr" ? "Sélecteur de langue" : "Language switch";
+    const label = state.language === "fr" ? "Sélecteur de langue" : "Language switch";
 
     return `
       <div class="language-switch" aria-label="${label}">
         <button
-          class="language-button ${state.lang === "en" ? "is-active" : ""}"
+          class="language-button ${state.language === "en" ? "is-active" : ""}"
           type="button"
-          aria-pressed="${state.lang === "en" ? "true" : "false"}"
+          aria-pressed="${state.language === "en" ? "true" : "false"}"
           data-lang-switch="en"
         >
           EN
         </button>
         <button
-          class="language-button ${state.lang === "fr" ? "is-active" : ""}"
+          class="language-button ${state.language === "fr" ? "is-active" : ""}"
           type="button"
-          aria-pressed="${state.lang === "fr" ? "true" : "false"}"
+          aria-pressed="${state.language === "fr" ? "true" : "false"}"
           data-lang-switch="fr"
         >
           FR
@@ -214,7 +214,7 @@
           </span>
         </a>
 
-        <nav class="site-nav" aria-label="${state.lang === "fr" ? "Navigation principale" : "Main navigation"}">
+        <nav class="site-nav" aria-label="${state.language === "fr" ? "Navigation principale" : "Main navigation"}">
           <ul class="nav-links">${navLinks}</ul>
         </nav>
 
@@ -247,6 +247,7 @@
     `;
 
     updateHeaderScrolledState();
+    bindHeaderInteractions();
   }
 
   function renderHero() {
@@ -723,11 +724,11 @@
     if (ogLocale) ogLocale.setAttribute("content", translate(data.meta.locale));
     if (ogImage) ogImage.setAttribute("content", data.person.profilePhoto.src);
 
-    document.documentElement.lang = state.lang;
-    document.documentElement.setAttribute("data-language", state.lang);
+    document.documentElement.lang = state.language;
+    document.documentElement.setAttribute("data-language", state.language);
 
     if (elements.skipLink) {
-      elements.skipLink.textContent = state.lang === "fr" ? "Aller au contenu" : "Skip to content";
+      elements.skipLink.textContent = state.language === "fr" ? "Aller au contenu" : "Skip to content";
     }
   }
 
@@ -752,6 +753,31 @@
     applyActiveNav();
   }
 
+  function bindHeaderInteractions() {
+    if (!elements.header) return;
+
+    elements.header.querySelectorAll("[data-lang-switch]").forEach((button) => {
+      button.addEventListener("click", () => {
+        applyLanguage(button.dataset.lang, { persist: true });
+      });
+    });
+
+    const menuToggle = elements.header.querySelector("[data-menu-toggle]");
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        state.menuOpen = !state.menuOpen;
+        renderHeader();
+        applyActiveNav();
+      });
+    }
+
+    elements.header.querySelectorAll("[data-mobile-link]").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+  }
+
   function setupGlobalListeners() {
     if (state.globalListenersReady) return;
 
@@ -763,31 +789,11 @@
     });
     window.addEventListener("languagechange", () => {
       if (!getStoredLanguage()) {
-        setLanguage(detectBrowserLanguage(), { persist: false });
+        applyLanguage(detectBrowserLanguage(), { persist: false });
       }
     });
 
     document.addEventListener("click", (event) => {
-      const langButton = closestFromTarget(event.target, "[data-lang-switch]");
-      if (langButton) {
-        setLanguage(langButton.dataset.lang, { persist: true });
-        return;
-      }
-
-      const menuToggle = closestFromTarget(event.target, "[data-menu-toggle]");
-      if (menuToggle) {
-        state.menuOpen = !state.menuOpen;
-        renderHeader();
-        applyActiveNav();
-        return;
-      }
-
-      const mobileLink = closestFromTarget(event.target, "[data-mobile-link]");
-      if (mobileLink) {
-        closeMenu();
-        return;
-      }
-
       if (state.menuOpen && !closestFromTarget(event.target, "#site-header")) {
         closeMenu();
       }
@@ -952,22 +958,21 @@
     return getStoredLanguage() || detectBrowserLanguage();
   }
 
-  function setLanguage(lang, options = {}) {
-    const nextLang = normalizeLanguage(lang);
+  function applyLanguage(lang, options = {}) {
+    const nextLanguage = normalizeLanguage(lang);
     const persist = options.persist !== false;
 
     if (persist) {
-      safeStorageSet(STORAGE_KEY, nextLang);
+      safeStorageSet(STORAGE_KEY, nextLanguage);
     }
 
-    state.lang = nextLang;
+    state.language = nextLanguage;
     renderApp();
   }
 
   function init() {
-    state.lang = detectLanguage();
     setupGlobalListeners();
-    renderApp();
+    applyLanguage(detectLanguage(), { persist: false });
   }
 
   document.addEventListener("DOMContentLoaded", init);
