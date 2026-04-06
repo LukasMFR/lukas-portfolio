@@ -875,6 +875,9 @@ button {
   position: relative;
   display: grid;
   gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .timeline-list::before {
@@ -889,6 +892,11 @@ button {
 .timeline-item {
   position: relative;
   padding-left: 3rem;
+  list-style: none;
+}
+
+.timeline-item::marker {
+  content: "";
 }
 
 .timeline-item::before {
