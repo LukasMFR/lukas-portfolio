@@ -39,7 +39,6 @@ window.PORTFOLIO_DATA = {
   },
   person: {
     name: "Lukas MAUFFRÉ",
-    initials: "LM",
     email: "lukasmauffre@icloud.com",
     location: {
       en: "Paris, France",
@@ -47,14 +46,21 @@ window.PORTFOLIO_DATA = {
     },
     resumeHref: "assets/cv/Lukas_Mauffre_CV.pdf",
     profilePhoto: {
-      src: "assets/images/profile-photo.jpg",
+      src: "assets/images/profile/profile-photo.webp",
       alt: {
         en: "Portrait placeholder for Lukas Mauffre",
         fr: "Emplacement du portrait de Lukas Mauffré",
       },
     },
+    headerAnimoji: {
+      src: "assets/images/profile/animoji-header.webp",
+      alt: {
+        en: "Header animoji placeholder for Lukas Mauffre",
+        fr: "Emplacement de l'Animoji d'en-tête de Lukas Mauffré",
+      },
+    },
     animoji: {
-      src: "assets/images/animoji.png",
+      src: "assets/images/profile/animoji-hero.webp",
       alt: {
         en: "Animoji placeholder for Lukas Mauffre",
         fr: "Emplacement de l'Animoji de Lukas Mauffré",
@@ -254,7 +260,7 @@ window.PORTFOLIO_DATA = {
         fr: "Année académique en cours",
       },
       image: {
-        src: "assets/images/ece-logo.png",
+        src: "assets/images/logos/ece-logo.webp",
         alt: {
           en: "ECE Paris logo placeholder",
           fr: "Placeholder du logo ECE Paris",
@@ -292,7 +298,7 @@ window.PORTFOLIO_DATA = {
         fr: "Année académique précédente",
       },
       image: {
-        src: "assets/images/ece-logo.png",
+        src: "assets/images/logos/ece-logo.webp",
         alt: {
           en: "ECE Paris logo placeholder",
           fr: "Placeholder du logo ECE Paris",
@@ -330,7 +336,7 @@ window.PORTFOLIO_DATA = {
         fr: "Première année du cursus",
       },
       image: {
-        src: "assets/images/ece-logo.png",
+        src: "assets/images/logos/ece-logo.webp",
         alt: {
           en: "ECE Paris logo placeholder",
           fr: "Placeholder du logo ECE Paris",
@@ -368,7 +374,7 @@ window.PORTFOLIO_DATA = {
         fr: "Londres, 2024",
       },
       image: {
-        src: "assets/images/omnes-london-logo.png",
+        src: "assets/images/logos/omnes-london-logo.webp",
         alt: {
           en: "OMNES Education London School logo placeholder",
           fr: "Placeholder du logo OMNES Education London School",
@@ -439,7 +445,7 @@ window.PORTFOLIO_DATA = {
         fr: "En cours",
       },
       image: {
-        src: "assets/images/ufcv-logo.png",
+        src: "assets/images/logos/ufcv-logo.webp",
         alt: {
           en: "UFCV logo placeholder",
           fr: "Placeholder du logo UFCV",
@@ -484,7 +490,7 @@ window.PORTFOLIO_DATA = {
         fr: "9 semaines",
       },
       image: {
-        src: "assets/images/dirisi-logo.png",
+        src: "assets/images/logos/dirisi-logo.webp",
         alt: {
           en: "DIRISI logo placeholder",
           fr: "Placeholder du logo DIRISI",

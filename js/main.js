@@ -44,8 +44,20 @@
     return Array.isArray(translated) ? translated : [];
   }
 
-  function icon(name) {
-    return `<svg class="icon" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
+  function safeStorageGet(key) {
+    try {
+      return window.localStorage.getItem(key);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function safeStorageSet(key, value) {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch (error) {
+      // Ignore storage failures when opening the portfolio locally.
+    }
   }
 
   function isExternal(href) {
@@ -56,22 +68,81 @@
     return isExternal(href) ? 'target="_blank" rel="noreferrer noopener"' : "";
   }
 
-  function buttonMarkup(link, variantClass = "button-secondary", extraClass = "") {
+  function iconAsset(name) {
+    return `assets/images/icons/${name}.webp`;
+  }
+
+  function icon(name, options = {}) {
+    const {
+      variant = "standard",
+      className = "",
+      decorative = true,
+      label = "",
+    } = options;
+
+    const classes = ["icon-image", `is-${variant}`, className].filter(Boolean).join(" ");
+    const alt = decorative ? "" : label;
+    const ariaHidden = decorative ? 'aria-hidden="true"' : "";
+
+    return `
+      <span class="${classes}" ${ariaHidden}>
+        <img src="${iconAsset(name)}" alt="${alt}" loading="lazy" decoding="async" />
+      </span>
+    `;
+  }
+
+  function logoMarkup(image) {
+    if (!image) return "";
+
+    return `
+      <div class="timeline-logo logo-frame">
+        <img src="${image.src}" alt="${translate(image.alt)}" loading="lazy" decoding="async" />
+      </div>
+    `;
+  }
+
+  function buttonMarkup(link, variantClass = "button-secondary", extraClass = "", iconVariant) {
     const classes = ["button", variantClass, extraClass].filter(Boolean).join(" ");
-    return `<a class="${classes}" href="${link.href}" ${linkAttrs(link.href)}>${icon(link.icon || "arrow-up-right")}<span>${translate(link.label)}</span></a>`;
+    const resolvedVariant =
+      iconVariant || (variantClass === "button-primary" ? "inverse" : "standard");
+
+    return `
+      <a class="${classes}" href="${link.href}" ${linkAttrs(link.href)}>
+        ${icon(link.icon || "arrow-up-right", { variant: resolvedVariant })}
+        <span>${translate(link.label)}</span>
+      </a>
+    `;
   }
 
   function pillList(items, className, itemClass) {
-    return `<div class="${className}">${items
-      .map((item) => `<span class="${itemClass}">${item}</span>`)
-      .join("")}</div>`;
+    return `
+      <div class="${className}">
+        ${items.map((item) => `<span class="${itemClass}">${item}</span>`).join("")}
+      </div>
+    `;
   }
 
   function renderLanguageSwitch() {
+    const label = state.lang === "fr" ? "Sélecteur de langue" : "Language switch";
+
     return `
-      <div class="language-switch" aria-label="${state.lang === "fr" ? "Sélecteur de langue" : "Language switch"}">
-        <button class="language-button ${state.lang === "en" ? "is-active" : ""}" type="button" data-lang-switch="en">EN</button>
-        <button class="language-button ${state.lang === "fr" ? "is-active" : ""}" type="button" data-lang-switch="fr">FR</button>
+      <div class="language-switch" aria-label="${label}">
+        <button
+          class="language-button ${state.lang === "en" ? "is-active" : ""}"
+          type="button"
+          aria-pressed="${state.lang === "en" ? "true" : "false"}"
+          data-lang-switch="en"
+        >
+          EN
+        </button>
+        <button
+          class="language-button ${state.lang === "fr" ? "is-active" : ""}"
+          type="button"
+          aria-pressed="${state.lang === "fr" ? "true" : "false"}"
+          data-lang-switch="fr"
+        >
+          FR
+        </button>
       </div>
     `;
   }
@@ -92,7 +163,7 @@
           <li>
             <a class="mobile-nav-link" href="${item.href}" data-mobile-link="${item.href.replace("#", "")}">
               <span>${translate(item.label)}</span>
-              ${icon("arrow-up-right")}
+              ${icon("arrow-up-right", { variant: "muted" })}
             </a>
           </li>
         `
@@ -105,10 +176,22 @@
       icon: "document",
     };
 
+    const menuLabel = translate({
+      en: state.menuOpen ? data.navigation.closeMenuLabel.en : data.navigation.mobileMenuLabel.en,
+      fr: state.menuOpen ? data.navigation.closeMenuLabel.fr : data.navigation.mobileMenuLabel.fr,
+    });
+
     elements.header.innerHTML = `
       <div class="nav-shell glass-panel">
         <a class="brand" href="#home" aria-label="${data.person.name}">
-          <span class="brand-mark" aria-hidden="true">${data.person.initials}</span>
+          <span class="brand-mark brand-avatar" aria-hidden="true">
+            <img
+              src="${data.person.headerAnimoji.src}"
+              alt=""
+              loading="eager"
+              decoding="async"
+            />
+          </span>
           <span class="brand-copy">
             <span class="brand-title">${data.person.name}</span>
             <span class="brand-subtitle">${translate(data.navigation.brandSubtitle)}</span>
@@ -130,10 +213,7 @@
             type="button"
             aria-controls="mobile-menu"
             aria-expanded="${state.menuOpen ? "true" : "false"}"
-            aria-label="${translate({
-              en: state.menuOpen ? data.navigation.closeMenuLabel.en : data.navigation.mobileMenuLabel.en,
-              fr: state.menuOpen ? data.navigation.closeMenuLabel.fr : data.navigation.mobileMenuLabel.fr,
-            })}"
+            aria-label="${menuLabel}"
             data-menu-toggle
           >
             ${icon(state.menuOpen ? "close" : "menu")}
@@ -158,7 +238,7 @@
       .map(
         (item) => `
           <a class="social-chip" href="${item.href}" ${linkAttrs(item.href)} aria-label="${item.title}">
-            ${icon(item.icon)}
+            ${icon(item.icon, { variant: "social" })}
             <span>${item.title}</span>
           </a>
         `
@@ -185,9 +265,7 @@
 
     const buttons = [
       buttonMarkup(ctas[0], "button-primary"),
-      `<a class="button button-secondary" href="${ctas[1].href}" target="_blank" rel="noreferrer noopener">${icon(
-        ctas[1].icon
-      )}<span>${translate(ctas[1].label)}</span></a>`,
+      buttonMarkup(ctas[1], "button-secondary"),
       buttonMarkup(ctas[2], "button-ghost"),
     ].join("");
 
@@ -206,11 +284,11 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-copy">
-            <div class="eyebrow">${icon("spark")}<span>${translate(data.hero.kicker)}</span></div>
+            <div class="eyebrow">${icon("spark", { variant: "accent" })}<span>${translate(data.hero.kicker)}</span></div>
             <h1 class="hero-title">${data.person.name}</h1>
             <p class="hero-subtitle">${translate(data.hero.subtitle)}</p>
             <div class="typewriter-line" aria-live="polite">
-              ${icon("shield")}
+              ${icon("shield", { variant: "accent" })}
               <span class="typewriter-text" id="typewriter-target"></span>
               <span class="typewriter-cursor" aria-hidden="true"></span>
             </div>
@@ -250,6 +328,7 @@
     const highlights = translateList(item.highlights)
       .map((point) => `<li>${point}</li>`)
       .join("");
+
     const linkBlock = item.links?.length
       ? `<div class="project-links">${item.links
           .map((link) => buttonMarkup(link, "button-ghost"))
@@ -261,11 +340,7 @@
         <article class="timeline-card glass-panel">
           <div class="timeline-header">
             <div class="timeline-title-row">
-              ${
-                item.image
-                  ? `<div class="timeline-logo"><img src="${item.image.src}" alt="${translate(item.image.alt)}" /></div>`
-                  : ""
-              }
+              ${logoMarkup(item.image)}
               <div>
                 <h3 class="timeline-role">${translate(item.role)}</h3>
                 <div class="timeline-meta">
@@ -290,7 +365,7 @@
     elements.about.innerHTML = `
       <div class="section-shell">
         <div class="section-heading">
-          <div class="section-kicker">${icon("users")}<span>${translate(data.about.kicker)}</span></div>
+          <div class="section-kicker">${icon("users", { variant: "accent" })}<span>${translate(data.about.kicker)}</span></div>
           <h2 class="section-title">${translate(data.about.title)}</h2>
           <p class="section-intro">${translate(data.about.intro)}</p>
         </div>
@@ -303,14 +378,14 @@
 
           <div class="timeline-grid">
             <section class="timeline-column">
-              <h3 class="timeline-title">${icon("graduation")}<span>${translate(data.about.educationTitle)}</span></h3>
+              <h3 class="timeline-title">${icon("graduation", { variant: "accent" })}<span>${translate(data.about.educationTitle)}</span></h3>
               <ul class="timeline-list">
                 ${data.education.map(renderTimelineItem).join("")}
               </ul>
             </section>
 
             <section class="timeline-column">
-              <h3 class="timeline-title">${icon("briefcase")}<span>${translate(data.about.experienceTitle)}</span></h3>
+              <h3 class="timeline-title">${icon("briefcase", { variant: "accent" })}<span>${translate(data.about.experienceTitle)}</span></h3>
               <ul class="timeline-list">
                 ${data.experiences.map(renderTimelineItem).join("")}
               </ul>
@@ -346,7 +421,7 @@
     elements.skills.innerHTML = `
       <div class="section-shell">
         <div class="section-heading">
-          <div class="section-kicker">${icon("chart")}<span>${translate(data.skills.kicker)}</span></div>
+          <div class="section-kicker">${icon("chart", { variant: "accent" })}<span>${translate(data.skills.kicker)}</span></div>
           <h2 class="section-title">${translate(data.skills.title)}</h2>
           <p class="section-intro">${translate(data.skills.intro)}</p>
         </div>
@@ -354,7 +429,7 @@
         <div class="skills-grid">${skillCards}</div>
 
         <div class="about-card glass-panel">
-          <h3 class="timeline-title">${icon("spark")}<span>${translate(data.skills.toolsLabel)}</span></h3>
+          <h3 class="timeline-title">${icon("spark", { variant: "accent" })}<span>${translate(data.skills.toolsLabel)}</span></h3>
           <div class="tool-cloud">${toolCloud}</div>
         </div>
       </div>
@@ -368,7 +443,7 @@
     return `
       <article class="project-card glass-panel">
         <div class="project-media">
-          <div class="project-badge">${icon(project.icon)}<span>${project.year}</span></div>
+          <div class="project-badge">${icon(project.icon, { variant: "accent" })}<span>${project.year}</span></div>
           <div>
             <h3 class="project-title">${translate(project.title)}</h3>
             <p class="project-subtitle">${translate(project.subtitle)}</p>
@@ -480,7 +555,7 @@
     elements.projects.innerHTML = `
       <div class="section-shell">
         <div class="section-heading">
-          <div class="section-kicker">${icon("spark")}<span>${translate(data.projects.kicker)}</span></div>
+          <div class="section-kicker">${icon("spark", { variant: "accent" })}<span>${translate(data.projects.kicker)}</span></div>
           <h2 class="section-title">${translate(data.projects.title)}</h2>
           <p class="section-intro">${translate(data.projects.intro)}</p>
         </div>
@@ -526,13 +601,13 @@
         (card) => `
           <a class="contact-link" href="${card.href}" ${linkAttrs(card.href)}>
             <span class="contact-link-main">
-              <span class="skill-icon">${icon(card.icon)}</span>
+              <span class="skill-icon">${icon(card.icon, { variant: "social" })}</span>
               <span>
                 <span class="contact-link-title">${card.title}</span>
                 <span class="contact-link-copy">${translate(card.copy)}</span>
               </span>
             </span>
-            ${icon("arrow-up-right")}
+            ${icon("arrow-up-right", { variant: "muted" })}
           </a>
         `
       )
@@ -541,7 +616,7 @@
     elements.contact.innerHTML = `
       <div class="section-shell">
         <div class="section-heading">
-          <div class="section-kicker">${icon("mail")}<span>${translate(data.contact.kicker)}</span></div>
+          <div class="section-kicker">${icon("mail", { variant: "accent" })}<span>${translate(data.contact.kicker)}</span></div>
           <h2 class="section-title">${translate(data.contact.title)}</h2>
           <p class="section-intro">${translate(data.contact.intro)}</p>
         </div>
@@ -552,7 +627,7 @@
             <p class="contact-copy">${translate(data.contact.ctaCopy)}</p>
             <div class="contact-actions">
               <a class="button button-primary" href="mailto:${data.person.email}">
-                ${icon("mail")}
+                ${icon("mail", { variant: "inverse" })}
                 <span>${translate(data.contact.primaryCta)}</span>
               </a>
               <a class="button button-secondary" href="${data.person.resumeHref}" target="_blank" rel="noreferrer noopener">
@@ -572,17 +647,14 @@
 
   function renderFooter() {
     const quickLinks = data.navigation.links
-      .map(
-        (item) =>
-          `<a class="social-chip" href="${item.href}">${translate(item.label)}</a>`
-      )
+      .map((item) => `<a class="social-chip" href="${item.href}">${translate(item.label)}</a>`)
       .join("");
 
     const socialLinks = data.person.socials
       .map(
         (item) => `
           <a class="social-chip" href="${item.href}" ${linkAttrs(item.href)}>
-            ${icon(item.icon)}
+            ${icon(item.icon, { variant: "social" })}
             <span>${item.title}</span>
           </a>
         `
@@ -627,11 +699,13 @@
     const ogTitle = document.querySelector('meta[property="og:title"]');
     const ogDescription = document.querySelector('meta[property="og:description"]');
     const ogLocale = document.querySelector('meta[property="og:locale"]');
+    const ogImage = document.querySelector('meta[property="og:image"]');
 
     if (description) description.setAttribute("content", translate(data.meta.description));
     if (ogTitle) ogTitle.setAttribute("content", translate(data.meta.ogTitle));
     if (ogDescription) ogDescription.setAttribute("content", translate(data.meta.ogDescription));
     if (ogLocale) ogLocale.setAttribute("content", translate(data.meta.locale));
+    if (ogImage) ogImage.setAttribute("content", data.person.profilePhoto.src);
 
     document.documentElement.lang = state.lang;
     document.documentElement.setAttribute("data-language", state.lang);
@@ -650,42 +724,15 @@
     renderProjects();
     renderContact();
     renderFooter();
-    bindInteractiveElements();
     setupRevealObserver();
     setupSectionObserver();
     startTypewriter();
-  }
-
-  function bindInteractiveElements() {
-    elements.header.querySelectorAll("[data-lang-switch]").forEach((button) => {
-      button.addEventListener("click", () => setLanguage(button.dataset.lang, true));
-    });
-
-    const toggle = elements.header.querySelector("[data-menu-toggle]");
-    if (toggle) {
-      toggle.addEventListener("click", () => {
-        state.menuOpen = !state.menuOpen;
-        renderHeader();
-        bindInteractiveElements();
-        applyActiveNav();
-      });
-    }
-
-    elements.header.querySelectorAll("[data-mobile-link]").forEach((link) => {
-      link.addEventListener("click", () => {
-        state.menuOpen = false;
-        renderHeader();
-        bindInteractiveElements();
-        applyActiveNav();
-      });
-    });
   }
 
   function closeMenu() {
     if (!state.menuOpen) return;
     state.menuOpen = false;
     renderHeader();
-    bindInteractiveElements();
     applyActiveNav();
   }
 
@@ -700,8 +747,33 @@
     });
 
     document.addEventListener("click", (event) => {
-      if (!state.menuOpen) return;
-      if (!elements.header.contains(event.target)) {
+      const langButton = event.target.closest("[data-lang-switch]");
+      if (langButton) {
+        setLanguage(langButton.dataset.lang, { persist: true });
+        return;
+      }
+
+      const menuToggle = event.target.closest("[data-menu-toggle]");
+      if (menuToggle) {
+        state.menuOpen = !state.menuOpen;
+        renderHeader();
+        applyActiveNav();
+        return;
+      }
+
+      const mobileLink = event.target.closest("[data-mobile-link]");
+      if (mobileLink) {
+        closeMenu();
+        return;
+      }
+
+      if (state.menuOpen && !event.target.closest("#site-header")) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
         closeMenu();
       }
     });
@@ -839,25 +911,36 @@
     step();
   }
 
-  function detectLanguage() {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved === "fr" || saved === "en") {
-      return saved;
-    }
-
-    const languages = Array.isArray(navigator.languages) && navigator.languages.length
-      ? navigator.languages
-      : [navigator.language || "en"];
-
-    return languages.some((language) => String(language).toLowerCase().startsWith("fr")) ? "fr" : "en";
+  function getStoredLanguage() {
+    const saved = safeStorageGet(STORAGE_KEY);
+    return saved === "fr" || saved === "en" ? saved : null;
   }
 
-  function setLanguage(lang, persist) {
-    const nextLang = lang === "fr" ? "fr" : "en";
-    state.lang = nextLang;
-    if (persist) {
-      window.localStorage.setItem(STORAGE_KEY, nextLang);
+  function detectLanguage() {
+    const stored = getStoredLanguage();
+    if (stored) {
+      return stored;
     }
+
+    const languages =
+      Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || "en"];
+
+    return languages.some((language) => String(language).toLowerCase().startsWith("fr"))
+      ? "fr"
+      : "en";
+  }
+
+  function setLanguage(lang, options = {}) {
+    const nextLang = lang === "fr" ? "fr" : "en";
+    const persist = options.persist !== false;
+
+    if (persist) {
+      safeStorageSet(STORAGE_KEY, nextLang);
+    }
+
+    state.lang = nextLang;
     renderApp();
   }
 

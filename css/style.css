@@ -16,6 +16,18 @@
   --accent-alt: #1d4ed8;
   --accent-soft: rgba(15, 118, 110, 0.12);
   --accent-alt-soft: rgba(29, 78, 216, 0.12);
+  --icon-filter-standard:
+    brightness(0) saturate(100%) invert(12%) sepia(17%) saturate(1100%)
+    hue-rotate(176deg) brightness(94%) contrast(92%);
+  --icon-filter-muted:
+    brightness(0) saturate(100%) invert(44%) sepia(12%) saturate(584%)
+    hue-rotate(176deg) brightness(93%) contrast(88%);
+  --icon-filter-accent:
+    brightness(0) saturate(100%) invert(36%) sepia(56%) saturate(971%)
+    hue-rotate(138deg) brightness(89%) contrast(97%);
+  --icon-filter-inverse: brightness(0) saturate(100%) invert(100%);
+  --icon-filter-social: var(--icon-filter-standard);
+  --logo-surface: #ffffff;
   --shadow-lg: 0 20px 60px rgba(17, 32, 51, 0.12);
   --shadow-md: 0 12px 32px rgba(17, 32, 51, 0.08);
   --shadow-sm: 0 8px 20px rgba(17, 32, 51, 0.06);
@@ -44,6 +56,17 @@
     --accent-alt: #60a5fa;
     --accent-soft: rgba(94, 234, 212, 0.15);
     --accent-alt-soft: rgba(96, 165, 250, 0.14);
+    --icon-filter-standard:
+      brightness(0) saturate(100%) invert(96%) sepia(8%) saturate(458%)
+      hue-rotate(174deg) brightness(103%) contrast(98%);
+    --icon-filter-muted:
+      brightness(0) saturate(100%) invert(72%) sepia(15%) saturate(336%)
+      hue-rotate(176deg) brightness(95%) contrast(93%);
+    --icon-filter-accent:
+      brightness(0) saturate(100%) invert(83%) sepia(22%) saturate(958%)
+      hue-rotate(109deg) brightness(98%) contrast(94%);
+    --icon-filter-inverse: brightness(0) saturate(100%) invert(100%);
+    --icon-filter-social: var(--icon-filter-standard);
     --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.34);
     --shadow-md: 0 18px 44px rgba(0, 0, 0, 0.26);
     --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.22);
@@ -94,13 +117,6 @@ button {
 :focus-visible {
   outline: 2px solid var(--accent-alt);
   outline-offset: 3px;
-}
-
-.icon-sprite {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
 }
 
 .site-background {
@@ -211,13 +227,25 @@ button {
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 16px;
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.55), transparent 40%),
-    linear-gradient(135deg, var(--accent), var(--accent-alt));
-  color: #f8fbff;
   display: grid;
   place-items: center;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), transparent 45%),
+    var(--surface-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-avatar {
+  padding: 0.18rem;
+}
+
+.brand-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  object-fit: cover;
 }
 
 .brand-copy {
@@ -331,13 +359,50 @@ button {
   color: var(--text-primary);
 }
 
-.button .icon,
-.language-button .icon,
-.icon-button .icon,
-.nav-link .icon {
+.icon-image {
   width: 1.05rem;
   height: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
+}
+
+.icon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: var(--icon-filter-standard);
+  transition: filter var(--transition), opacity var(--transition);
+}
+
+.icon-image.is-muted img {
+  filter: var(--icon-filter-muted);
+}
+
+.icon-image.is-accent img {
+  filter: var(--icon-filter-accent);
+}
+
+.icon-image.is-inverse img {
+  filter: var(--icon-filter-inverse);
+}
+
+.icon-image.is-social img {
+  filter: var(--icon-filter-social);
+}
+
+.button .icon-image,
+.icon-button .icon-image,
+.mobile-nav-link .icon-image,
+.social-chip .icon-image,
+.contact-link .icon-image {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.logo-frame {
+  background: var(--logo-surface);
 }
 
 .language-switch {
@@ -450,7 +515,7 @@ button {
   font-size: 0.92rem;
 }
 
-.eyebrow .icon {
+.eyebrow .icon-image {
   width: 1rem;
   height: 1rem;
 }
@@ -812,19 +877,23 @@ button {
 }
 
 .timeline-logo {
-  width: 3rem;
-  height: 3rem;
+  width: 4.35rem;
+  height: 3.2rem;
   border-radius: 16px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border);
+  padding: 0.45rem 0.55rem;
+  background: var(--logo-surface);
+  border: 1px solid rgba(17, 32, 51, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 10px 24px rgba(17, 32, 51, 0.06);
   flex: 0 0 auto;
 }
 
 .timeline-logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .timeline-role {
@@ -889,7 +958,8 @@ button {
   color: var(--text-primary);
 }
 
-.skill-icon .icon {
+.skill-icon .icon-image,
+.course-summary-icon .icon-image {
   width: 1.25rem;
   height: 1.25rem;
 }
@@ -1197,11 +1267,18 @@ button {
   min-width: 0;
 }
 
+.contact-link-main > span:last-child {
+  display: grid;
+  gap: 0.18rem;
+}
+
 .contact-link-title {
+  display: block;
   font-weight: 700;
 }
 
 .contact-link-copy {
+  display: block;
   color: var(--text-muted);
   font-size: 0.92rem;
 }

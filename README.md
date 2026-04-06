@@ -4,11 +4,13 @@ Static bilingual portfolio built with plain HTML, CSS and JavaScript for direct 
 
 ## Project structure
 
-- `index.html`: single-page structure, SEO tags and icon sprite
+- `index.html`: single-page structure and SEO tags
 - `css/style.css`: theme, layout, responsive rules and animations
 - `js/i18n.js`: centralised bilingual content and structured portfolio data
 - `js/main.js`: rendering, language detection, language switch, mobile menu and typewriter effect
-- `assets/images/`: profile photo, Animoji and logo placeholders
+- `assets/images/profile/`: profile photo and Animoji placeholders
+- `assets/images/logos/`: school, company and experience logos
+- `assets/images/icons/`: interface and social icon placeholders in `.webp`
 - `assets/icons/favicon.svg`: site favicon
 - `assets/cv/Lukas_Mauffre_CV.pdf`: CV placeholder file
 
@@ -21,13 +23,15 @@ Static bilingual portfolio built with plain HTML, CSS and JavaScript for direct 
 
 ## Replace assets
 
-- Profile photo: replace `assets/images/profile-photo.jpg`
-- Animoji: replace `assets/images/animoji.png`
-- ECE logo: replace `assets/images/ece-logo.png`
-- OMNES London logo: replace `assets/images/omnes-london-logo.png`
-- UFCV logo: replace `assets/images/ufcv-logo.png`
-- DIRISI logo: replace `assets/images/dirisi-logo.png`
+- Profile photo: replace `assets/images/profile/profile-photo.webp`
+- Header Animoji: replace `assets/images/profile/animoji-header.webp`
+- Hero Animoji: replace `assets/images/profile/animoji-hero.webp`
+- ECE logo: replace `assets/images/logos/ece-logo.webp`
+- OMNES London logo: replace `assets/images/logos/omnes-london-logo.webp`
+- UFCV logo: replace `assets/images/logos/ufcv-logo.webp`
+- DIRISI logo: replace `assets/images/logos/dirisi-logo.webp`
 - CV: replace `assets/cv/Lukas_Mauffre_CV.pdf`
+- Interface and social icons: replace the files in `assets/images/icons/`
 
 You can keep the same filenames to avoid changing the code.
 
