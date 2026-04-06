@@ -6,7 +6,7 @@
   }
 
   const state = {
-    language: "fr",
+    language: "en",
     menuOpen: false,
     typewriterTimer: null,
     revealObserver: null,
@@ -53,7 +53,7 @@
   }
 
   function normalizeLanguage(lang) {
-    return SUPPORTED_LANGUAGES.has(lang) ? lang : "fr";
+    return SUPPORTED_LANGUAGES.has(lang) ? lang : "en";
   }
 
   function closestFromTarget(target, selector) {
@@ -916,6 +916,18 @@
     step();
   }
 
+  function detectBrowserLanguage() {
+    const browserNavigator = typeof navigator === "object" && navigator ? navigator : {};
+    const browserLanguages =
+      Array.isArray(browserNavigator.languages) && browserNavigator.languages.length
+        ? browserNavigator.languages
+        : [browserNavigator.language || "en"];
+
+    return browserLanguages.some((language) => String(language).toLowerCase().startsWith("fr"))
+      ? "fr"
+      : "en";
+  }
+
   function applyLanguage(lang) {
     const nextLanguage = normalizeLanguage(lang);
 
@@ -925,7 +937,7 @@
 
   function init() {
     setupGlobalListeners();
-    applyLanguage("fr");
+    applyLanguage(detectBrowserLanguage());
   }
 
   document.addEventListener("DOMContentLoaded", init);
