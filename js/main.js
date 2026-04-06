@@ -28,6 +28,7 @@
 
   const STORAGE_KEY = "lukas-portfolio-language";
   const SECTION_IDS = ["home", "about", "skills", "projects", "contact"];
+  const SUPPORTED_LANGUAGES = new Set(["en", "fr"]);
 
   function translate(value) {
     if (value === null || value === undefined) return "";
@@ -68,6 +69,21 @@
     return isExternal(href) ? 'target="_blank" rel="noreferrer noopener"' : "";
   }
 
+  function normalizeLanguage(lang) {
+    return SUPPORTED_LANGUAGES.has(lang) ? lang : "en";
+  }
+
+  function closestFromTarget(target, selector) {
+    const element =
+      target && typeof target.closest === "function"
+        ? target
+        : target && target.parentElement && typeof target.parentElement.closest === "function"
+          ? target.parentElement
+          : null;
+
+    return element ? element.closest(selector) : null;
+  }
+
   function iconAsset(name) {
     return `assets/images/icons/${name}.webp`;
   }
@@ -85,7 +101,7 @@
     const ariaHidden = decorative ? 'aria-hidden="true"' : "";
 
     return `
-      <span class="${classes}" ${ariaHidden}>
+      <span class="${classes}" data-icon-name="${name}" ${ariaHidden}>
         <img src="${iconAsset(name)}" alt="${alt}" loading="lazy" decoding="async" />
       </span>
     `;
@@ -745,15 +761,20 @@
         closeMenu();
       }
     });
+    window.addEventListener("languagechange", () => {
+      if (!getStoredLanguage()) {
+        setLanguage(detectBrowserLanguage(), { persist: false });
+      }
+    });
 
     document.addEventListener("click", (event) => {
-      const langButton = event.target.closest("[data-lang-switch]");
+      const langButton = closestFromTarget(event.target, "[data-lang-switch]");
       if (langButton) {
         setLanguage(langButton.dataset.lang, { persist: true });
         return;
       }
 
-      const menuToggle = event.target.closest("[data-menu-toggle]");
+      const menuToggle = closestFromTarget(event.target, "[data-menu-toggle]");
       if (menuToggle) {
         state.menuOpen = !state.menuOpen;
         renderHeader();
@@ -761,13 +782,13 @@
         return;
       }
 
-      const mobileLink = event.target.closest("[data-mobile-link]");
+      const mobileLink = closestFromTarget(event.target, "[data-mobile-link]");
       if (mobileLink) {
         closeMenu();
         return;
       }
 
-      if (state.menuOpen && !event.target.closest("#site-header")) {
+      if (state.menuOpen && !closestFromTarget(event.target, "#site-header")) {
         closeMenu();
       }
     });
@@ -913,15 +934,10 @@
 
   function getStoredLanguage() {
     const saved = safeStorageGet(STORAGE_KEY);
-    return saved === "fr" || saved === "en" ? saved : null;
+    return SUPPORTED_LANGUAGES.has(saved) ? saved : null;
   }
 
-  function detectLanguage() {
-    const stored = getStoredLanguage();
-    if (stored) {
-      return stored;
-    }
-
+  function detectBrowserLanguage() {
     const languages =
       Array.isArray(navigator.languages) && navigator.languages.length
         ? navigator.languages
@@ -932,8 +948,12 @@
       : "en";
   }
 
+  function detectLanguage() {
+    return getStoredLanguage() || detectBrowserLanguage();
+  }
+
   function setLanguage(lang, options = {}) {
-    const nextLang = lang === "fr" ? "fr" : "en";
+    const nextLang = normalizeLanguage(lang);
     const persist = options.persist !== false;
 
     if (persist) {

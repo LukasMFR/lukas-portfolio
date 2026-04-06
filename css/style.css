@@ -373,7 +373,8 @@ button {
   height: 100%;
   object-fit: contain;
   filter: var(--icon-filter-standard);
-  transition: filter var(--transition), opacity var(--transition);
+  transform: translateZ(0);
+  transition: filter var(--transition), opacity var(--transition), transform var(--transition);
 }
 
 .icon-image.is-muted img {
@@ -390,6 +391,22 @@ button {
 
 .icon-image.is-social img {
   filter: var(--icon-filter-social);
+}
+
+.icon-image[data-icon-name="github"] img {
+  transform: scale(0.92);
+}
+
+.icon-image[data-icon-name="linkedin"] img {
+  transform: scale(0.86);
+}
+
+.icon-image[data-icon-name="tryhackme"] img {
+  transform: scale(0.94);
+}
+
+.icon-image[data-icon-name="x"] img {
+  transform: scale(0.84);
 }
 
 .button .icon-image,

@@ -10,7 +10,8 @@ Static bilingual portfolio built with plain HTML, CSS and JavaScript for direct 
 - `js/main.js`: rendering, language detection, language switch, mobile menu and typewriter effect
 - `assets/images/profile/`: profile photo and Animoji placeholders
 - `assets/images/logos/`: school, company and experience logos
-- `assets/images/icons/`: interface and social icon placeholders in `.webp`
+- `assets/images/icons/`: interface and social icons in `.webp`
+- `assets/images/icons-src/`: source SVG files used to regenerate the icon set if needed
 - `assets/icons/favicon.svg`: site favicon
 - `assets/cv/Lukas_Mauffre_CV.pdf`: CV placeholder file
 
@@ -32,6 +33,7 @@ Static bilingual portfolio built with plain HTML, CSS and JavaScript for direct 
 - DIRISI logo: replace `assets/images/logos/dirisi-logo.webp`
 - CV: replace `assets/cv/Lukas_Mauffre_CV.pdf`
 - Interface and social icons: replace the files in `assets/images/icons/`
+- Source icons can also be regenerated from `assets/images/icons-src/` if you want to keep the current naming and rebuild the `.webp` files
 
 You can keep the same filenames to avoid changing the code.
 
