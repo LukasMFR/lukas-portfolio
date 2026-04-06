@@ -6,7 +6,7 @@
   }
 
   const state = {
-    language: "en",
+    language: "fr",
     menuOpen: false,
     typewriterTimer: null,
     revealObserver: null,
@@ -787,11 +787,6 @@
         closeMenu();
       }
     });
-    window.addEventListener("languagechange", () => {
-      if (!getStoredLanguage()) {
-        applyLanguage(detectBrowserLanguage(), { persist: false });
-      }
-    });
 
     document.addEventListener("click", (event) => {
       if (state.menuOpen && !closestFromTarget(event.target, "#site-header")) {
@@ -943,19 +938,8 @@
     return SUPPORTED_LANGUAGES.has(saved) ? saved : null;
   }
 
-  function detectBrowserLanguage() {
-    const languages =
-      Array.isArray(navigator.languages) && navigator.languages.length
-        ? navigator.languages
-        : [navigator.language || "en"];
-
-    return languages.some((language) => String(language).toLowerCase().startsWith("fr"))
-      ? "fr"
-      : "en";
-  }
-
-  function detectLanguage() {
-    return getStoredLanguage() || detectBrowserLanguage();
+  function getInitialLanguage() {
+    return getStoredLanguage() || "fr";
   }
 
   function applyLanguage(lang, options = {}) {
@@ -972,7 +956,7 @@
 
   function init() {
     setupGlobalListeners();
-    applyLanguage(detectLanguage(), { persist: false });
+    applyLanguage(getInitialLanguage(), { persist: false });
   }
 
   document.addEventListener("DOMContentLoaded", init);
