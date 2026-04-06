@@ -250,17 +250,28 @@ button {
 
 .brand-copy {
   min-width: 0;
+  display: grid;
+  gap: 0.12rem;
 }
 
 .brand-title {
+  display: block;
   font-size: 0.98rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-subtitle {
+  display: block;
   color: var(--text-muted);
   font-size: 0.78rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .site-nav {
@@ -272,6 +283,7 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 0.25rem;
   padding: 0.3rem;
   margin: 0;
@@ -283,6 +295,7 @@ button {
   border-radius: 999px;
   color: var(--text-secondary);
   font-size: 0.95rem;
+  white-space: nowrap;
   transition:
     background-color var(--transition),
     color var(--transition),
@@ -493,6 +506,7 @@ button {
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid var(--border);
+  white-space: nowrap;
 }
 
 .mobile-actions {
@@ -670,36 +684,6 @@ button {
   object-fit: cover;
 }
 
-.portrait-meta {
-  position: absolute;
-  left: 1.4rem;
-  bottom: 1.4rem;
-  right: 1.4rem;
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  background: rgba(8, 17, 29, 0.58);
-  color: #f8fbff;
-  backdrop-filter: blur(18px);
-}
-
-@media (prefers-color-scheme: light) {
-  .portrait-meta {
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--text-primary);
-  }
-}
-
-.portrait-meta-title {
-  font-weight: 700;
-}
-
-.portrait-meta-copy {
-  margin-top: 0.35rem;
-  color: inherit;
-  opacity: 0.82;
-  font-size: 0.94rem;
-}
-
 .animoji-badge {
   position: absolute;
   right: -1rem;
@@ -755,12 +739,17 @@ button {
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
+}
+
+.section-kicker .icon-image {
+  width: 1.18rem;
+  height: 1.18rem;
 }
 
 .section-title {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-size: clamp(2.15rem, 4.4vw, 3.35rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
 }
@@ -789,6 +778,10 @@ button {
 
 .about-card p + p {
   margin-top: 1rem;
+}
+
+.about-grid .about-card .pill-list {
+  margin-top: 1.65rem;
 }
 
 .pill-list,
@@ -825,12 +818,14 @@ button {
 .timeline-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 1.2rem;
   margin-top: 1rem;
 }
 
 .timeline-column {
   display: grid;
+  align-content: start;
   gap: 0.9rem;
 }
 
@@ -950,6 +945,10 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.skills-grid + .about-card {
+  margin-top: 1.65rem;
 }
 
 .skill-card {
@@ -1107,6 +1106,11 @@ button {
 .course-group-title {
   margin: 0;
   font-size: 1.15rem;
+}
+
+.course-group-title-strong {
+  font-size: clamp(1.32rem, 2vw, 1.55rem);
+  line-height: 1.18;
 }
 
 .course-group-copy {
@@ -1429,8 +1433,12 @@ button {
     padding: 0.7rem 0.8rem;
   }
 
+  .brand-title {
+    font-size: 0.92rem;
+  }
+
   .brand-subtitle {
-    display: none;
+    font-size: 0.72rem;
   }
 
   .hero-section {

@@ -307,10 +307,6 @@
             <article class="portrait-card glass-panel">
               <div class="portrait-image-shell">
                 <img src="${data.person.profilePhoto.src}" alt="${translate(data.person.profilePhoto.alt)}" />
-                <div class="portrait-meta">
-                  <div class="portrait-meta-title">${translate(data.hero.portraitTitle)}</div>
-                  <div class="portrait-meta-copy">${translate(data.hero.portraitCopy)}</div>
-                </div>
               </div>
             </article>
 
@@ -574,7 +570,9 @@
           <section class="course-group">
             <div class="course-group-header">
               <div>
-                <h3 class="course-group-title">${translate(data.projects.academicTitle)}</h3>
+                <h3 class="course-group-title course-group-title-strong">${translate(
+                  data.projects.academicTitle
+                )}</h3>
                 <p class="course-group-copy">${translate(data.projects.academicIntro)}</p>
               </div>
             </div>
