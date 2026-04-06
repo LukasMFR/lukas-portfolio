@@ -741,7 +741,7 @@
 
     elements.header.querySelectorAll("[data-lang-switch]").forEach((button) => {
       button.addEventListener("click", () => {
-        applyLanguage(button.dataset.lang);
+        applyLanguage(button.getAttribute("data-lang-switch"));
       });
     });
 
