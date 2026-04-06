@@ -307,11 +307,6 @@
           </div>
 
           <div class="hero-visual">
-            <div class="floating-note glass-panel">
-              <strong>${translate(data.hero.noteTitle)}</strong>
-              <span>${translate(data.hero.noteCopy)}</span>
-            </div>
-
             <article class="portrait-card glass-panel">
               <div class="portrait-image-shell">
                 <img src="${data.person.profilePhoto.src}" alt="${translate(data.person.profilePhoto.alt)}" />
