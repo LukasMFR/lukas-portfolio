@@ -734,6 +734,32 @@
     applyActiveNav();
   }
 
+  function isElementNearViewport(element) {
+    if (!element || typeof element.getBoundingClientRect !== "function") {
+      return false;
+    }
+
+    const rect = element.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+
+    return rect.top <= viewportHeight * 0.92 && rect.bottom >= viewportHeight * 0.08;
+  }
+
+  function ensureVisibleReveals() {
+    document.querySelectorAll(".reveal").forEach((element) => {
+      if (element.classList.contains("is-visible")) {
+        return;
+      }
+
+      if (isElementNearViewport(element)) {
+        element.classList.add("is-visible");
+        if (state.revealObserver) {
+          state.revealObserver.unobserve(element);
+        }
+      }
+    });
+  }
+
   function bindHeaderInteractions() {
     if (!elements.header) return;
 
@@ -762,11 +788,19 @@
   function setupGlobalListeners() {
     if (state.globalListenersReady) return;
 
-    window.addEventListener("scroll", updateHeaderScrolledState, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        updateHeaderScrolledState();
+        ensureVisibleReveals();
+      },
+      { passive: true }
+    );
     window.addEventListener("resize", () => {
       if (window.innerWidth > 880) {
         closeMenu();
       }
+      ensureVisibleReveals();
     });
 
     document.addEventListener("click", (event) => {
@@ -795,12 +829,12 @@
     }
 
     const revealTargets = document.querySelectorAll(".reveal");
-    if (state.reduceMotion) {
+    if (state.reduceMotion || typeof window.IntersectionObserver !== "function") {
       revealTargets.forEach((element) => element.classList.add("is-visible"));
       return;
     }
 
-    state.revealObserver = new IntersectionObserver(
+    state.revealObserver = new window.IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -809,10 +843,14 @@
           }
         });
       },
-      { threshold: 0.14 }
+      {
+        threshold: 0.02,
+        rootMargin: "0px 0px -8% 0px",
+      }
     );
 
     revealTargets.forEach((element) => state.revealObserver.observe(element));
+    ensureVisibleReveals();
   }
 
   function setupSectionObserver() {

@@ -220,6 +220,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
+  flex: 1 1 auto;
   min-width: 0;
 }
 
@@ -312,6 +313,9 @@ button {
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 1002;
 }
 
 .button,
@@ -475,12 +479,16 @@ button {
 
 .mobile-menu {
   position: fixed;
-  inset: 5.7rem 1rem auto 1rem;
+  inset: calc(var(--header-offset) + 0.2rem) 1rem auto 1rem;
   border-radius: var(--radius-lg);
   padding: 1rem;
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
+  z-index: 1001;
+  max-height: calc(100svh - var(--header-offset) - 1rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
@@ -1408,6 +1416,9 @@ button {
 
   .mobile-menu-toggle {
     display: inline-flex;
+    position: relative;
+    z-index: 1002;
+    flex: 0 0 auto;
   }
 
   .site-header .nav-shell {
