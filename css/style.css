@@ -549,7 +549,7 @@ button {
 }
 
 .mobile-actions > .language-switch {
-  justify-self: center;
+  justify-self: end;
   width: fit-content;
   max-width: 100%;
   gap: 0.2rem;
