@@ -1463,6 +1463,19 @@ button {
 
   .hero-visual {
     order: -1;
+    width: min(100%, 32rem);
+    margin-inline: auto;
+  }
+
+  .portrait-card {
+    padding: 1rem;
+  }
+
+  .animoji-badge {
+    width: min(8.75rem, 30%);
+    padding: 0.7rem;
+    right: 0.25rem;
+    bottom: 1.1rem;
   }
 
   .floating-note {
@@ -1495,6 +1508,21 @@ button {
 
   .hero-title {
     font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .hero-visual {
+    width: min(100%, 27rem);
+  }
+
+  .portrait-card {
+    padding: 0.95rem;
+  }
+
+  .animoji-badge {
+    width: min(7.5rem, 30%);
+    padding: 0.65rem;
+    right: 0.35rem;
+    bottom: 0.8rem;
   }
 }
 
@@ -1531,6 +1559,10 @@ button {
   .hero-visual {
     width: min(100%, 19.5rem);
     margin-inline: auto;
+  }
+
+  .portrait-card {
+    padding: 0.85rem;
   }
 
   .hero-actions,
@@ -1580,6 +1612,7 @@ button {
 
   .animoji-badge {
     width: min(6.5rem, 31%);
+    padding: 0.55rem;
     right: 0.5rem;
     bottom: 0.5rem;
   }
