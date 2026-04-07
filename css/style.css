@@ -1504,6 +1504,10 @@ button {
     --header-offset: 5.8rem;
   }
 
+  .hero-grid {
+    gap: 1.5rem;
+  }
+
   .site-header {
     padding: 0.7rem 0;
   }
@@ -1522,6 +1526,11 @@ button {
 
   .hero-section {
     padding-top: calc(var(--header-offset) + 0.8rem);
+  }
+
+  .hero-visual {
+    width: min(100%, 19.5rem);
+    margin-inline: auto;
   }
 
   .hero-actions,
@@ -1570,9 +1579,9 @@ button {
   }
 
   .animoji-badge {
-    width: 7.5rem;
-    right: 0.6rem;
-    bottom: 0.6rem;
+    width: min(6.5rem, 31%);
+    right: 0.5rem;
+    bottom: 0.5rem;
   }
 
   .floating-note {
