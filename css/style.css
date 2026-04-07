@@ -2,7 +2,7 @@
   color-scheme: light dark;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
   --font-serif-hero:
-    "New York", "Iowan Old Style", "Literata", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    "Source Serif 4", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --font-mono: "SFMono-Regular", "JetBrains Mono", "Menlo", monospace;
   --bg: #eef3f8;
   --bg-strong: #f7fafc;
@@ -603,13 +603,12 @@ button {
 .hero-title {
   margin: 0;
   font-family: var(--font-serif-hero);
-  font-size: clamp(3rem, 6.9vw, 5.35rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 600;
-  line-height: 0.93;
-  letter-spacing: -0.038em;
-  font-optical-sizing: auto;
-  font-synthesis: none;
+  line-height: 0.91;
+  letter-spacing: -0.045em;
   text-wrap: balance;
+  font-variation-settings: "opsz" 44;
 }
 
 .hero-subtitle {
@@ -635,12 +634,11 @@ button {
   align-items: center;
   min-height: 1.75rem;
   font-family: var(--font-serif-hero);
-  font-size: 1.02em;
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.008em;
-  font-optical-sizing: auto;
-  font-synthesis: none;
+  font-size: 1.03em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 20;
 }
 
 .typewriter-cursor {
@@ -1508,9 +1506,9 @@ button {
   }
 
   .hero-title {
-    font-size: clamp(2.55rem, 11.6vw, 3.95rem);
-    line-height: 0.95;
-    letter-spacing: -0.032em;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: 0.94;
+    letter-spacing: -0.04em;
   }
 }
 
