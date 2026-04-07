@@ -548,6 +548,19 @@ button {
   gap: 0.75rem;
 }
 
+.mobile-actions > .language-switch {
+  justify-self: center;
+  width: fit-content;
+  max-width: 100%;
+  gap: 0.2rem;
+  padding: 0.24rem;
+}
+
+.mobile-actions > .language-switch .language-button {
+  min-width: 2.7rem;
+  padding: 0.5rem 0.72rem;
+}
+
 .section {
   scroll-margin-top: calc(var(--header-offset) + 1rem);
   padding: 2rem 0 0;
