@@ -9,5 +9,5 @@
   </defs>
   <rect width="128" height="128" rx="32" fill="#09121d" />
   <path d="M64 18 26 34v29c0 25 16 47 38 54 22-7 38-29 38-54V34L64 18Z" fill="url(#g)" />
-  <path d="M46 80V46h8v27h16v7H46Zm28 0V46h8v34h-8Z" fill="#f7fbff" />
+  <path d="M38 80V46h8v27h14v7H38Zm26 0V46h7l6 12 6-12h7v34h-7V60l-6 11-6-11v20h-7Z" fill="#f7fbff" />
 </svg>
