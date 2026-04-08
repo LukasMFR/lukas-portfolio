@@ -215,8 +215,10 @@
             aria-label="${menuLabel}"
             data-menu-toggle
           >
-            <span data-menu-toggle-icon>
-              ${icon(state.menuOpen ? "close" : "menu")}
+            <span data-menu-toggle-icon aria-hidden="true">
+              <span class="menu-toggle-line"></span>
+              <span class="menu-toggle-line"></span>
+              <span class="menu-toggle-line"></span>
             </span>
           </button>
         </div>
@@ -745,7 +747,6 @@
     if (!elements.header) return;
 
     const menuToggle = elements.header.querySelector("[data-menu-toggle]");
-    const menuToggleIcon = elements.header.querySelector("[data-menu-toggle-icon]");
     const mobileMenu = elements.header.querySelector("[data-mobile-menu]");
     const menuLabel = translate({
       en: state.menuOpen ? data.navigation.closeMenuLabel.en : data.navigation.mobileMenuLabel.en,
@@ -757,10 +758,6 @@
     if (menuToggle) {
       menuToggle.setAttribute("aria-expanded", state.menuOpen ? "true" : "false");
       menuToggle.setAttribute("aria-label", menuLabel);
-    }
-
-    if (menuToggleIcon) {
-      menuToggleIcon.innerHTML = icon(state.menuOpen ? "close" : "menu");
     }
 
     if (mobileMenu) {
