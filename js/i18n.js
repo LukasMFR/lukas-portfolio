@@ -552,8 +552,8 @@ window.PORTFOLIO_DATA = {
       fr: "Profondeur technique, culture sécurité et delivery structuré.",
     },
     intro: {
-      en: "My profile sits at the intersection of infrastructure, security, development, IAM, governance and communication. The categories below summarise the main domains that repeatedly appear across my coursework, projects, apprenticeship and volunteering.",
-      fr: "Mon profil se situe à l'intersection de l'infrastructure, de la sécurité, du développement, de l'IAM, de la gouvernance et de la communication. Les catégories ci-dessous résument les grands domaines qui reviennent dans mon cursus, mes projets, mon alternance et mes engagements.",
+      en: "My profile sits at the intersection of infrastructure, security, development, IAM, governance and communication. The categories below summarise the main domains that repeatedly appear across my coursework, academic and personal projects, apprenticeship and volunteering.",
+      fr: "Mon profil se situe à l'intersection de l'infrastructure, de la sécurité, du développement, de l'IAM, de la gouvernance et de la communication. Les catégories ci-dessous résument les grands domaines qui reviennent dans mon cursus, mes projets académiques et personnels, mon alternance et mes engagements.",
     },
     categories: [
       {
@@ -786,8 +786,8 @@ window.PORTFOLIO_DATA = {
       fr: "Projets, travaux académiques et études appliquées organisés pour rester lisibles.",
     },
     intro: {
-      en: "This section combines flagship builds, applied academic work and continuous learning. Each item keeps the original substance: context, objectives, technologies, outcomes and links when available.",
-      fr: "Cette section regroupe projets majeurs, travaux académiques appliqués et formation continue. Chaque élément conserve le fond d'origine : contexte, objectifs, technologies, apports et liens quand ils existent.",
+      en: "This section combines flagship builds, personal projects, applied academic work and continuous learning. Each item keeps the original substance: context, objectives, technologies, outcomes and links when available.",
+      fr: "Cette section regroupe projets majeurs, projets personnels, travaux académiques appliqués et formation continue. Chaque élément conserve le fond d'origine : contexte, objectifs, technologies, apports et liens quand ils existent.",
     },
     featuredTitle: { en: "Featured builds", fr: "Projets phares" },
     featuredIntro: {
@@ -831,6 +831,41 @@ window.PORTFOLIO_DATA = {
     continuousIntro: {
       en: "Complementary certifications and extra modules that reinforce my cyber culture, network foundations and self-learning habits.",
       fr: "Certifications et modules complémentaires qui renforcent ma culture cyber, mes bases réseau et ma capacité d'autoformation.",
+    },
+    personalTitle: { en: "Personal projects", fr: "Projets personnels" },
+    personalIntro: {
+      en: "Self-driven projects developed outside formal coursework to explore useful interfaces, Python tooling, shell automation and native Apple applications while keeping the same attention to structure, maintainability and practical value.",
+      fr: "Projets menés en autonomie en dehors du cursus pour explorer des interfaces utiles, des outils Python, de l'automatisation shell et des applications Apple natives, avec la même attention portée à la structure, à la maintenabilité et à l'utilité concrète.",
+    },
+    personalGroups: {
+      web: {
+        title: { en: "Web and responsive interfaces", fr: "Web et interfaces responsives" },
+        copy: {
+          en: "Responsive front-end projects and lightweight web tools designed for direct, useful everyday use on desktop and mobile.",
+          fr: "Projets front-end responsives et petits outils web pensés pour un usage direct et utile au quotidien sur desktop comme sur mobile.",
+        },
+      },
+      python: {
+        title: { en: "Python, simulation and applied maths", fr: "Python, simulation et maths appliquées" },
+        copy: {
+          en: "CLI and analytical projects built around modular arithmetic, constrained environments, historical data and simulation logic.",
+          fr: "Projets analytiques et CLI construits autour de l'arithmétique modulaire, des environnements contraints, des données historiques et de la logique de simulation.",
+        },
+      },
+      tooling: {
+        title: { en: "CLI, shell and workflow tools", fr: "CLI, shell et outils de workflow" },
+        copy: {
+          en: "Utility scripts and developer tooling created to save time, preserve quality and simplify recurring technical tasks.",
+          fr: "Scripts utilitaires et outils de développement créés pour gagner du temps, préserver la qualité et simplifier des tâches techniques récurrentes.",
+        },
+      },
+      apple: {
+        title: { en: "Apple ecosystem and native utilities", fr: "Écosystème Apple et utilitaires natifs" },
+        copy: {
+          en: "Swift and SwiftUI applications focused on native ergonomics, adaptive interfaces, localisation and practical productivity or reference use cases.",
+          fr: "Applications Swift et SwiftUI centrées sur l'ergonomie native, l'adaptation multi-appareils, la localisation et des usages concrets de productivité ou de référence.",
+        },
+      },
     },
   },
   featuredProjects: [
@@ -2376,6 +2411,709 @@ window.PORTFOLIO_DATA = {
       tags: ["Cisco", "NetAcad", "Network Defense", "Endpoint Security", "Cyber Threat Management", "Junior Cybersecurity Analyst"],
     },
   ],
+  personalProjects: [
+    {
+      group: "web",
+      icon: "globe",
+      type: {
+        en: "Personal web game",
+        fr: "Projet personnel de jeu web",
+      },
+      title: {
+        en: "modern-snake-game",
+        fr: "modern-snake-game",
+      },
+      context: {
+        en: "Modern reinterpretation of Snake built as a polished responsive web game for desktop and mobile, with a contemporary interface influenced by light glassmorphism, an explicit game start flow and a small Node.js static server for local development.",
+        fr: "Réinterprétation moderne de Snake conçue comme un jeu web responsive et soigné pour desktop et mobile, avec une interface contemporaine légèrement inspirée du glassmorphism, un lancement de partie explicite et un petit serveur statique Node.js pour le développement local.",
+      },
+      objective: {
+        en: "Create a clean and maintainable browser game that feels deliberate on both keyboard and touch devices while separating gameplay logic into testable modules.",
+        fr: "Créer un jeu navigateur propre et maintenable, agréable aussi bien au clavier qu'au tactile, tout en séparant la logique de jeu dans des modules testables.",
+      },
+      focus: {
+        en: [
+          "Responsive interface designed to behave cleanly on desktop and mobile, with keyboard controls and touch controls that stay usable on smaller screens.",
+          "Explicit start flow, pause and restart handling, plus gameplay logic separated from presentation to keep the code easier to test and maintain.",
+          "Combination of modern UI polish, user input management and a lightweight Node.js static server for local front-end development.",
+        ],
+        fr: [
+          "Interface responsive pensée pour fonctionner proprement sur desktop et mobile, avec contrôles clavier et tactiles qui restent lisibles et utilisables sur petits écrans.",
+          "Lancement de partie explicite, gestion du pause et du restart, ainsi qu'une logique de jeu séparée de l'affichage pour garder un code plus testable et maintenable.",
+          "Association d'un rendu UI moderne, d'une gestion soignée des entrées utilisateur et d'un petit serveur statique Node.js pour le développement local.",
+        ],
+      },
+      technologies: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Responsive design",
+        "UI/UX",
+        "Modular code structure",
+        "Game logic",
+        "Keyboard controls",
+        "Touch controls",
+        "Logic tests",
+      ],
+      outcomes: {
+        en: [
+          "Stronger HTML, CSS, JavaScript and Node.js practice in a complete front-end project.",
+          "Better responsive design, UI/UX and user input management habits across desktop and mobile.",
+          "More confidence structuring modular code, testing application logic and keeping front-end code clean over time.",
+        ],
+        fr: [
+          "Renforcement des compétences en HTML, CSS, JavaScript et Node.js dans un projet front-end complet.",
+          "Meilleurs réflexes en responsive design, UI/UX et gestion des entrées utilisateur sur desktop comme sur mobile.",
+          "Davantage d'aisance pour structurer un code modulaire, tester une logique applicative et garder un front-end propre dans la durée.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/modern-snake-game", icon: "github" },
+      ],
+    },
+    {
+      group: "web",
+      icon: "globe",
+      type: {
+        en: "Personal web calculator",
+        fr: "Projet personnel de calculateur web",
+      },
+      title: {
+        en: "Clash Potion Calculator",
+        fr: "Clash Potion Calculator",
+      },
+      context: {
+        en: "Modern responsive web app made for Clash of Clans players to quickly calculate upgrade or research finish times with different potions. The static site includes dedicated calculators for Builder Potions, Research Potions and Pet Potions, clear finish-date display based on the system clock and a lightweight interface that can work offline.",
+        fr: "Application web moderne et responsive pensée pour les joueurs de Clash of Clans afin de calculer rapidement les temps de fin d'amélioration ou de recherche avec différentes potions. Le site statique comprend des calculateurs dédiés aux Builder Potions, Research Potions et Pet Potions, un affichage clair des dates de fin selon l'horloge système et une interface légère pouvant fonctionner hors ligne.",
+      },
+      objective: {
+        en: "Provide a fast and useful calculator with a sober Apple-like feel that remains easy to use on both desktop and mobile.",
+        fr: "Proposer un calculateur rapide et utile, avec une sobriété inspirée d'un rendu Apple-like, tout en restant simple à utiliser sur desktop comme sur mobile.",
+      },
+      focus: {
+        en: [
+          "Several dedicated calculators built around remaining-duration input and immediate finish-date display.",
+          "HTML5, CSS3 and JavaScript implementation with modular scripts, responsive behaviour and a static multi-page structure.",
+          "Automatic dark and light mode handling based on the system theme, plus a lightweight interface suitable for offline use and static hosting.",
+        ],
+        fr: [
+          "Plusieurs calculateurs dédiés construits autour d'une saisie par durée restante et d'un affichage immédiat des dates de fin.",
+          "Implémentation en HTML5, CSS3 et JavaScript avec scripts modulaires, comportement responsive et structure statique multi-pages.",
+          "Prise en charge automatique du dark et light mode selon le thème système, avec une interface légère adaptée à un usage hors ligne et à l'hébergement statique.",
+        ],
+      },
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive design",
+        "Modular scripts",
+        "Dark mode",
+        "Light mode",
+        "Multi-page architecture",
+        "Offline support",
+        "Static hosting",
+      ],
+      outcomes: {
+        en: [
+          "Stronger front-end development habits and clearer JavaScript calculation logic.",
+          "More experience in UX/UI choices for useful web utilities and lightweight everyday tools.",
+          "Better practice shipping a responsive static application that stays clean, readable and easy to host.",
+        ],
+        fr: [
+          "Renforcement des réflexes en développement front-end et de la logique de calcul en JavaScript.",
+          "Davantage d'expérience dans les choix UX/UI pour des outils web utiles et légers au quotidien.",
+          "Meilleure pratique de livraison d'une application statique responsive, sobre, lisible et simple à héberger.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/repo-structure-copier", icon: "github" },
+      ],
+    },
+    {
+      group: "web",
+      icon: "chart",
+      type: {
+        en: "Personal responsive web utility",
+        fr: "Projet personnel d'utilitaire web responsive",
+      },
+      title: {
+        en: "Compteur",
+        fr: "Compteur",
+      },
+      context: {
+        en: "Simple responsive website designed to increase or decrease a value using buttons and predefined increments, with an interface kept fluid and readable on desktop and mobile, including devices with a notch such as iPhone.",
+        fr: "Site simple et responsive permettant d'augmenter ou de diminuer une valeur à l'aide de boutons et d'incréments prédéfinis, avec une interface pensée pour rester fluide et lisible sur desktop comme sur mobile, y compris sur des appareils avec encoche comme l'iPhone.",
+      },
+      objective: {
+        en: "Build a lightweight web interface that remains clear, accessible and adaptive across common browsing contexts.",
+        fr: "Construire une interface web légère qui reste claire, accessible et adaptative dans les contextes d'usage les plus courants.",
+      },
+      focus: {
+        en: [
+          "Increment and decrement actions combined with predefined step values in a simple client-side interaction model.",
+          "Responsive layout work to keep the interface readable on desktop, mobile and devices with constrained safe areas.",
+          "Straightforward front-end implementation aimed at usability, legibility and fluid interaction rather than visual overload.",
+        ],
+        fr: [
+          "Actions d'incrémentation et de décrémentation combinées à des pas prédéfinis dans une logique d'interaction simple côté client.",
+          "Travail responsive pour conserver une interface lisible sur desktop, mobile et appareils avec zones de sécurité contraintes.",
+          "Implémentation front-end volontairement directe, orientée vers l'usage, la lisibilité et la fluidité plutôt que la surcharge visuelle.",
+        ],
+      },
+      technologies: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Responsive design",
+        "Client-side logic",
+        "Adaptive interface",
+        "Safe-area awareness",
+      ],
+      outcomes: {
+        en: [
+          "Stronger front-end fundamentals through a small but complete interactive site.",
+          "Better responsive design reflexes for mobile constraints and safe-area considerations.",
+          "More confidence building accessible and adaptive browser-side interactions with clean code.",
+        ],
+        fr: [
+          "Renforcement des bases front-end à travers un petit site interactif mais complet.",
+          "Meilleurs réflexes de responsive design face aux contraintes mobiles et aux zones de sécurité.",
+          "Davantage d'aisance pour construire des interactions côté navigateur accessibles et adaptatives avec un code propre.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/Compteur", icon: "github" },
+      ],
+    },
+    {
+      group: "python",
+      icon: "chart",
+      type: {
+        en: "Personal Python modular arithmetic tool",
+        fr: "Projet personnel d'outil Python d'arithmétique modulaire",
+      },
+      title: {
+        en: "Modular Arithmetic Toolkit",
+        fr: "Modular Arithmetic Toolkit",
+      },
+      context: {
+        en: "Standalone Python calculator for modular arithmetic designed for lightweight environments with limited memory. The program handles congruences, gcd, Bézout coefficients, modular inverses, linear modular equations, tables in Z and Z_n, the Chinese Remainder Theorem, powers modulo m with Fermat-based optimisation and prime factorisation.",
+        fr: "Calculatrice autonome d'arithmétique modulaire conçue en Python pour des environnements légers à mémoire limitée. Le programme permet de manipuler les congruences, le PGCD, les coefficients de Bézout, les inverses modulaires, les équations linéaires modulaires, les tables dans Z et Z_n, le théorème des restes chinois, les puissances modulo m avec optimisation via le théorème de Fermat, ainsi que la décomposition en facteurs premiers.",
+      },
+      objective: {
+        en: "Build a useful and pedagogical modular-computation tool while keeping the program efficient enough for constrained environments.",
+        fr: "Construire un outil utile et pédagogique pour le calcul modulaire tout en gardant un programme suffisamment efficace pour des environnements contraints.",
+      },
+      focus: {
+        en: [
+          "Wide functional scope covering congruences, gcd, Bézout coefficients, modular inverses, linear modular equations and arithmetic tables in both Z and Z_n.",
+          "Integration of Chinese Remainder Theorem workflows, modular powers with Fermat optimisation and prime factorisation in one autonomous program.",
+          "Attention to algorithmics, constrained-environment efficiency and pedagogical program structure for both calculation and learning.",
+        ],
+        fr: [
+          "Périmètre fonctionnel large couvrant congruences, PGCD, coefficients de Bézout, inverses modulaires, équations linéaires modulaires et tables arithmétiques dans Z comme dans Z_n.",
+          "Intégration du théorème des restes chinois, des puissances modulo m avec optimisation par le théorème de Fermat et de la décomposition en facteurs premiers dans un même programme autonome.",
+          "Attention portée à l'algorithmique, à l'efficacité en environnement contraint et à la structuration pédagogique du programme pour le calcul comme pour l'apprentissage.",
+        ],
+      },
+      technologies: [
+        "Python",
+        "Algorithmics",
+        "Modular arithmetic",
+        "Congruences",
+        "GCD",
+        "Bézout coefficients",
+        "Modular inverses",
+        "Chinese Remainder Theorem",
+        "Fermat theorem",
+        "Prime factorisation",
+      ],
+      outcomes: {
+        en: [
+          "Stronger Python and algorithmic reasoning through mathematically dense functionality.",
+          "More familiarity with applied mathematics concepts linked to cryptography and modular computation.",
+          "Better experience designing a pedagogical tool that stays useful, structured and efficient in constrained conditions.",
+        ],
+        fr: [
+          "Renforcement des compétences en Python et du raisonnement algorithmique sur un périmètre mathématique dense.",
+          "Meilleure familiarité avec des notions de mathématiques appliquées à la cryptographie et au calcul modulaire.",
+          "Davantage d'expérience dans la conception d'un outil pédagogique à la fois utile, structuré et efficace dans des conditions contraintes.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/modular-arithmetic-toolkit", icon: "github" },
+      ],
+    },
+    {
+      group: "python",
+      icon: "chart",
+      type: {
+        en: "Personal Python CLI simulation tool",
+        fr: "Projet personnel d'outil CLI de simulation en Python",
+      },
+      title: {
+        en: "BTC DCA Simulation",
+        fr: "BTC DCA Simulation",
+      },
+      context: {
+        en: "Interactive Python simulator for Bitcoin DCA strategy analysis using real historical BTC/EUR data. The tool lets the user configure the period, purchase frequency, invested amount, fees and custom intervals, then computes invested amount, final portfolio value, profit or loss, ROI, multiple, annualised XIRR and maximum drawdown, with chart generation and CSV or JSON exports for analysis.",
+        fr: "Simulateur interactif en Python pour analyser une stratégie DCA sur Bitcoin à partir de données historiques réelles BTC/EUR. L'outil permet de configurer la période, la fréquence d'achat, le montant investi, les frais et des intervalles personnalisés, puis calcule le montant investi, la valeur finale du portefeuille, le profit ou la perte, le ROI, le multiple, le TRI annualisé (XIRR) et le drawdown maximum, avec génération de graphiques et d'exports CSV ou JSON pour l'analyse.",
+      },
+      objective: {
+        en: "Make progressive BTC investment scenarios easier to study through a practical research-oriented CLI built on historical data.",
+        fr: "Faciliter l'étude de scénarios d'investissement progressif en BTC grâce à un outil CLI pratique, orienté simulation et fondé sur des données historiques.",
+      },
+      focus: {
+        en: [
+          "Interactive configuration of investment period, frequency, amount, fees and custom analysis intervals.",
+          "Automatic computation of invested amount, portfolio value, profit or loss, ROI, multiple, annualised XIRR and maximum drawdown.",
+          "Generation of charts and CSV or JSON files to support deeper analysis, comparison and simulation workflows.",
+        ],
+        fr: [
+          "Configuration interactive de la période d'investissement, de la fréquence, du montant, des frais et d'intervalles d'analyse personnalisés.",
+          "Calcul automatique du montant investi, de la valeur du portefeuille, du profit ou de la perte, du ROI, du multiple, du TRI annualisé (XIRR) et du drawdown maximum.",
+          "Génération de graphiques et de fichiers CSV ou JSON pour soutenir des workflows d'analyse, de comparaison et de simulation plus poussés.",
+        ],
+      },
+      technologies: [
+        "Python",
+        "BTC/EUR historical data",
+        "CLI",
+        "Financial data",
+        "XIRR",
+        "ROI",
+        "Drawdown",
+        "CSV",
+        "JSON",
+        "Data visualisation",
+      ],
+      outcomes: {
+        en: [
+          "Stronger Python practice applied to financial data handling, automation and analysis.",
+          "Better understanding of performance metrics, simulation logic and decision-support visualisation.",
+          "More confidence structuring an interactive CLI research tool built around real historical datasets.",
+        ],
+        fr: [
+          "Renforcement des compétences Python appliquées à la manipulation de données financières, à l'automatisation et à l'analyse.",
+          "Meilleure compréhension des métriques de performance, de la logique de simulation et de la visualisation orientée aide à la décision.",
+          "Davantage d'aisance pour structurer un outil CLI interactif de recherche fondé sur des jeux de données historiques réels.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/btc-dca-simulation", icon: "github" },
+      ],
+    },
+    {
+      group: "tooling",
+      icon: "server",
+      type: {
+        en: "Personal Bash utility",
+        fr: "Projet personnel d'utilitaire Bash",
+      },
+      title: {
+        en: "QuickCut CLI",
+        fr: "QuickCut CLI",
+      },
+      context: {
+        en: "Minimalist Bash utility created to cut videos quickly without re-encoding through FFmpeg, preserving original quality and temporal metadata. The tool supports manual segment input or text-file driven input, several timecode formats, parallel execution on multiple CPU cores, automatic output generation in a dedicated directory and compatibility with macOS, Linux and WSL.",
+        fr: "Utilitaire Bash minimaliste conçu pour découper rapidement des vidéos sans ré-encodage à l'aide de FFmpeg, afin de conserver la qualité originale et les métadonnées temporelles. L'outil prend en charge une saisie manuelle des segments ou via fichier texte, plusieurs formats de timecodes, l'exécution parallèle sur plusieurs cœurs CPU, la génération automatique des extraits dans un dossier dédié et la compatibilité macOS, Linux et WSL.",
+      },
+      objective: {
+        en: "Speed up recurring video-trimming workflows with a CLI tool that stays simple to use while covering realistic production needs.",
+        fr: "Accélérer des workflows récurrents de découpe vidéo avec un outil CLI simple à utiliser tout en couvrant des besoins réalistes de production.",
+      },
+      focus: {
+        en: [
+          "Video cuts performed without re-encoding so the original quality and timing metadata remain intact.",
+          "Manual or file-based segment definition with support for several timecode formats and batch-oriented usage.",
+          "Parallel execution on several CPU cores, automatic dedicated output folder creation and cross-platform compatibility across macOS, Linux and WSL.",
+        ],
+        fr: [
+          "Découpe vidéo sans ré-encodage afin de conserver la qualité d'origine et les métadonnées temporelles.",
+          "Définition des segments en saisie manuelle ou via fichier, avec prise en charge de plusieurs formats de timecodes et d'un usage orienté batch.",
+          "Exécution parallèle sur plusieurs cœurs CPU, génération automatique d'un dossier de sortie dédié et compatibilité multi-environnements macOS, Linux et WSL.",
+        ],
+      },
+      technologies: [
+        "Bash",
+        "FFmpeg",
+        "CLI",
+        "No re-encoding",
+        "Timecodes",
+        "Parallel processing",
+        "macOS",
+        "Linux",
+        "WSL",
+      ],
+      outcomes: {
+        en: [
+          "Stronger Bash and FFmpeg practice on a tool designed for actual everyday use.",
+          "Better command-line automation habits for multimedia processing and workflow optimisation.",
+          "More confidence building practical CLI utilities that balance simplicity, robustness and performance.",
+        ],
+        fr: [
+          "Renforcement des compétences en Bash et FFmpeg sur un outil pensé pour un usage réel au quotidien.",
+          "Meilleurs réflexes d'automatisation en ligne de commande pour le traitement multimédia et l'optimisation de workflow.",
+          "Davantage d'aisance pour créer des utilitaires CLI pratiques qui équilibrent simplicité, robustesse et performance.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/quickcut-cli", icon: "github" },
+      ],
+    },
+    {
+      group: "tooling",
+      icon: "code",
+      type: {
+        en: "Maintained and repackaged VS Code extension fork",
+        fr: "Fork maintenu et repackagé d'extension VS Code",
+      },
+      title: {
+        en: "Repo Structure Copier",
+        fr: "Repo Structure Copier",
+      },
+      context: {
+        en: "Maintained and repackaged fork of a Visual Studio Code extension designed to copy a repository structure together with file contents to the clipboard, while respecting .repoignore-style exclusion rules and showing a token counter useful in LLM-oriented workflows.",
+        fr: "Fork maintenu et repackagé d'une extension Visual Studio Code destiné à copier la structure complète d'un dépôt avec le contenu des fichiers vers le presse-papiers, en respectant des règles d'exclusion de type .repoignore et en affichant un compteur de tokens utile dans des workflows orientés LLM.",
+      },
+      objective: {
+        en: "Adapt and package an existing developer tool so it better fits AI-oriented coding workflows while remaining easy to install and use.",
+        fr: "Adapter et packager un outil de développement existant pour qu'il s'intègre mieux à des workflows de développement orientés IA tout en restant simple à installer et à utiliser.",
+      },
+      focus: {
+        en: [
+          "Fork, adaptation and packaging work instead of a greenfield build, with attention to the practical needs of repository-to-clipboard workflows.",
+          "Use of JavaScript or TypeScript in the VS Code extension environment with npm-based tooling and packaging through vsce.",
+          "Improvement of open-source developer tooling through exclusion rules, token visibility and workflow customisation for LLM usage.",
+        ],
+        fr: [
+          "Travail de fork, d'adaptation et de packaging plutôt qu'un développement from scratch, avec attention portée aux besoins concrets des workflows de copie de dépôt vers le presse-papiers.",
+          "Usage de JavaScript ou TypeScript dans l'environnement VS Code Extension avec outillage npm et packaging via vsce.",
+          "Amélioration d'un outil open source de développeur grâce aux règles d'exclusion, à la visibilité sur les tokens et à la personnalisation de workflows pour l'usage avec des LLM.",
+        ],
+      },
+      technologies: [
+        "JavaScript",
+        "TypeScript",
+        "VS Code Extension",
+        "npm",
+        "vsce",
+        ".repoignore",
+        "Clipboard workflows",
+        "Token counting",
+        "LLM workflows",
+      ],
+      outcomes: {
+        en: [
+          "Stronger JavaScript or TypeScript practice inside the VS Code extension ecosystem.",
+          "Better familiarity with npm, packaging, open-source maintenance and extension delivery.",
+          "More experience customising existing tools to improve real developer workflows shaped by AI usage.",
+        ],
+        fr: [
+          "Renforcement des compétences en JavaScript ou TypeScript dans l'écosystème des extensions VS Code.",
+          "Meilleure familiarité avec npm, le packaging, la maintenance open source et la livraison d'extensions.",
+          "Davantage d'expérience dans la personnalisation d'outils existants pour améliorer des workflows de développement réellement influencés par l'usage de l'IA.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/repo-structure-copier", icon: "github" },
+      ],
+    },
+    {
+      group: "tooling",
+      icon: "server",
+      type: {
+        en: "Personal Bash automation script",
+        fr: "Projet personnel de script Bash d'automatisation",
+      },
+      title: {
+        en: "rsync-transfer-script",
+        fr: "rsync-transfer-script",
+      },
+      context: {
+        en: "Bash automation script created to simplify and make file transfers more reliable between a Mac and a remote server, with upload and download modes, interactive source and destination path selection, support for different remote volume bases, automatic rsync binary detection, progress tracking, preservation of attributes and creation dates, and a coloured readable CLI.",
+        fr: "Script Bash d'automatisation conçu pour simplifier et fiabiliser les transferts de fichiers entre un Mac et un serveur distant, avec modes upload et download, sélection interactive des chemins source et destination, prise en charge de différentes bases de volumes distants, détection automatique du binaire rsync, suivi de progression, préservation des attributs et des dates de création, ainsi qu'une interface CLI colorée et lisible.",
+      },
+      objective: {
+        en: "Make remote exchange and backup tasks safer, clearer and faster in real operating conditions.",
+        fr: "Rendre les tâches d'échange distant et de sauvegarde plus sûres, plus claires et plus rapides dans des conditions d'usage réelles.",
+      },
+      focus: {
+        en: [
+          "Two transfer modes, upload and download, combined with interactive selection of source and destination paths.",
+          "Support for varied remote volume bases, automatic rsync detection and progress monitoring during transfers.",
+          "Preservation of file attributes and creation dates, with a coloured readable CLI intended for practical administration work.",
+        ],
+        fr: [
+          "Deux modes de transfert, upload et download, associés à une sélection interactive des chemins source et destination.",
+          "Prise en charge de bases de volumes distants variées, détection automatique de rsync et suivi de progression pendant les transferts.",
+          "Préservation des attributs et des dates de création, avec une CLI colorée et lisible pensée pour de vrais usages d'administration.",
+        ],
+      },
+      technologies: [
+        "Bash",
+        "rsync",
+        "Upload",
+        "Download",
+        "Remote servers",
+        "Progress tracking",
+        "Attribute preservation",
+        "Creation dates",
+        "CLI",
+        "macOS",
+      ],
+      outcomes: {
+        en: [
+          "Stronger Bash, rsync and systems automation skills on a concrete transfer workflow.",
+          "Better handling of remote paths, script robustness and operational reliability concerns.",
+          "More confidence improving administration and backup tasks with small but practical shell tooling.",
+        ],
+        fr: [
+          "Renforcement des compétences en Bash, rsync et automatisation système sur un workflow de transfert concret.",
+          "Meilleure gestion des chemins distants, de la robustesse des scripts et des enjeux de fiabilité opérationnelle.",
+          "Davantage d'aisance pour améliorer des tâches d'administration et de sauvegarde grâce à de petits outils shell réellement utiles.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/rsync-transfer-script", icon: "github" },
+      ],
+    },
+    {
+      group: "tooling",
+      icon: "document",
+      type: {
+        en: "Personal shell conversion tool",
+        fr: "Projet personnel d'outil shell de conversion",
+      },
+      title: {
+        en: "svg-to-png",
+        fr: "svg-to-png",
+      },
+      context: {
+        en: "Shell utility created to automate the conversion of SVG assets into usable PNG files, with support for height and width options, ratio preservation and optional DPI adjustment through ImageMagick. The workflow is designed for straightforward command-line use on macOS and relies on rsvg-convert and convert.",
+        fr: "Outil shell créé pour automatiser la conversion d'assets SVG en fichiers PNG exploitables, avec prise en charge d'options de hauteur et de largeur, conservation du ratio et réglage optionnel du DPI via ImageMagick. Le workflow est conçu pour un usage simple en ligne de commande sur macOS et repose sur rsvg-convert et convert.",
+      },
+      objective: {
+        en: "Automate a small but frequent image-processing workflow through a direct and reusable command-line tool.",
+        fr: "Automatiser un petit workflow fréquent de traitement d'images au moyen d'un outil en ligne de commande direct et réutilisable.",
+      },
+      focus: {
+        en: [
+          "Conversion pipeline centered on rsvg-convert and ImageMagick to move from vector assets to usable raster files.",
+          "Argument handling for width, height, ratio preservation and optional DPI control depending on export needs.",
+          "Simple macOS command-line workflow meant to optimise small recurring technical tasks without unnecessary overhead.",
+        ],
+        fr: [
+          "Pipeline de conversion centré sur rsvg-convert et ImageMagick pour passer d'assets vectoriels à des fichiers raster exploitables.",
+          "Gestion d'arguments pour largeur, hauteur, conservation du ratio et contrôle optionnel du DPI selon les besoins d'export.",
+          "Workflow macOS simple en ligne de commande, pensé pour optimiser de petites tâches techniques récurrentes sans lourdeur inutile.",
+        ],
+      },
+      technologies: [
+        "Shell",
+        "SVG",
+        "PNG",
+        "rsvg-convert",
+        "ImageMagick",
+        "DPI",
+        "Argument parsing",
+        "macOS",
+      ],
+      outcomes: {
+        en: [
+          "Stronger shell scripting habits on a focused image-processing use case.",
+          "Better familiarity with CLI-based automation for graphics asset workflows.",
+          "More confidence handling arguments and designing small technical tools that save time every day.",
+        ],
+        fr: [
+          "Renforcement des réflexes de shell scripting sur un cas d'usage ciblé de traitement d'images.",
+          "Meilleure familiarité avec l'automatisation CLI appliquée aux workflows d'assets graphiques.",
+          "Davantage d'aisance pour gérer des arguments et concevoir de petits outils techniques qui font gagner du temps au quotidien.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/svg-to-png", icon: "github" },
+      ],
+    },
+    {
+      group: "apple",
+      icon: "spark",
+      type: {
+        en: "Personal native macOS application",
+        fr: "Projet personnel d'application macOS native",
+      },
+      title: {
+        en: "GitSmartSplitter",
+        fr: "GitSmartSplitter",
+      },
+      context: {
+        en: "Native macOS application built with Swift and SwiftUI to split large blocks of text into GitHub-, documentation- or messaging-friendly segments. The app can split content by character limit or by number of parts, add contextual headers, copy each part in one click, use optional LLM prompts, check for updates and offer a multilingual interface in English, French and German with unit and UI tests.",
+        fr: "Application macOS native construite en Swift et SwiftUI pour découper de grands blocs de texte en segments exploitables pour GitHub, la documentation ou les plateformes de messagerie. L'application peut segmenter un contenu selon une limite de caractères ou un nombre de parties, ajouter des en-têtes contextuels, copier chaque partie en un clic, utiliser des prompts LLM optionnels, vérifier les mises à jour et proposer une interface multilingue en anglais, français et allemand avec tests unitaires et UI.",
+      },
+      objective: {
+        en: "Deliver a concrete productivity tool with native macOS ergonomics for handling large text blocks cleanly and efficiently.",
+        fr: "Fournir un outil de productivité concret avec une ergonomie macOS native pour manipuler proprement et efficacement de grands blocs de texte.",
+      },
+      focus: {
+        en: [
+          "Text-splitting logic based either on a character limit or on a target number of parts, with optional contextual headers.",
+          "One-click copy actions, optional prompts for LLM workflows and update-checking capabilities.",
+          "Native multilingual interface in English, French and German backed by both unit tests and UI tests.",
+        ],
+        fr: [
+          "Logique de découpage de texte fondée soit sur une limite de caractères, soit sur un nombre cible de segments, avec en-têtes contextuels optionnels.",
+          "Actions de copie en un clic, prompts optionnels pour les workflows LLM et capacité de vérification des mises à jour.",
+          "Interface native multilingue en anglais, français et allemand, soutenue par des tests unitaires et des tests UI.",
+        ],
+      },
+      technologies: [
+        "Swift",
+        "SwiftUI",
+        "macOS",
+        "Localization",
+        "Unit tests",
+        "UI tests",
+        "LLM prompts",
+        "Update checking",
+      ],
+      outcomes: {
+        en: [
+          "Stronger Swift and SwiftUI practice on a native Apple productivity tool.",
+          "Better macOS UX instincts, text-processing logic and localisation workflow habits.",
+          "More experience building a real utility with testing, update management and multilingual support.",
+        ],
+        fr: [
+          "Renforcement des compétences en Swift et SwiftUI sur un outil de productivité Apple natif.",
+          "Meilleurs réflexes en UX macOS, en logique de découpage de texte et en workflow de localisation.",
+          "Davantage d'expérience dans la création d'un utilitaire concret avec tests, gestion des mises à jour et support multilingue.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/GitSmartSplitter", icon: "github" },
+      ],
+    },
+    {
+      group: "apple",
+      icon: "chart",
+      type: {
+        en: "Personal cross-platform SwiftUI application",
+        fr: "Projet personnel d'application SwiftUI multi-plateforme",
+      },
+      title: {
+        en: "CompteurSwiftUI",
+        fr: "CompteurSwiftUI",
+      },
+      context: {
+        en: "Simple but versatile counter application built with SwiftUI to increment or decrement a value through a clear interface, custom step sizes, animations and gradient backgrounds, while adapting across iPhone, iPad, Mac, Apple Watch, Apple TV and Apple Vision Pro.",
+        fr: "Application de compteur simple mais polyvalente développée en SwiftUI pour incrémenter ou décrémenter une valeur via une interface claire, des pas personnalisables, des animations et des arrière-plans dégradés, tout en s'adaptant à l'iPhone, l'iPad, le Mac, l'Apple Watch, l'Apple TV et l'Apple Vision Pro.",
+      },
+      objective: {
+        en: "Explore a clean multi-platform SwiftUI implementation of a small but well-finished utility.",
+        fr: "Explorer une implémentation SwiftUI multi-plateforme propre autour d'un petit utilitaire soigné.",
+      },
+      focus: {
+        en: [
+          "Counter interactions with increment, decrement and custom step sizes through a clear and direct interface.",
+          "Use of animations and gradient backgrounds to give the app more personality while keeping it simple.",
+          "Adaptive UI work across a wide Apple device range, from iPhone and iPad to watchOS, tvOS and Vision Pro contexts.",
+        ],
+        fr: [
+          "Interactions de compteur avec incrémentation, décrémentation et pas personnalisables via une interface claire et directe.",
+          "Usage d'animations et d'arrière-plans dégradés pour donner davantage de personnalité à l'application tout en restant simple.",
+          "Travail d'adaptation de l'interface sur un large éventail d'appareils Apple, de l'iPhone et l'iPad aux contextes watchOS, tvOS et Vision Pro.",
+        ],
+      },
+      technologies: [
+        "Swift",
+        "SwiftUI",
+        "iPhone",
+        "iPad",
+        "Mac",
+        "Apple Watch",
+        "Apple TV",
+        "Apple Vision Pro",
+        "Adaptive UI",
+        "Animations",
+        "Gradients",
+      ],
+      outcomes: {
+        en: [
+          "Stronger Swift and SwiftUI practice across several Apple platforms instead of a single target.",
+          "Better understanding of interface adaptation, small-scale app logic and cross-platform design choices.",
+          "More confidence building clean UI and maintaining coherent behaviour across very different devices.",
+        ],
+        fr: [
+          "Renforcement des compétences en Swift et SwiftUI sur plusieurs plateformes Apple plutôt que sur une seule cible.",
+          "Meilleure compréhension de l'adaptation d'interface, de la logique applicative simple et des choix de conception multi-appareils.",
+          "Davantage d'aisance pour construire une UI propre et maintenir un comportement cohérent sur des appareils très différents.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/CompteurSwiftUI", icon: "github" },
+      ],
+    },
+    {
+      group: "apple",
+      icon: "chart",
+      type: {
+        en: "Personal photography reference app",
+        fr: "Projet personnel d'application de référence pour la photographie",
+      },
+      title: {
+        en: "Stop Chart",
+        fr: "Stop Chart",
+      },
+      context: {
+        en: "SwiftUI application created for photographers to quickly consult essential correspondence charts related to exposure, aperture and ISO, with an intuitive bilingual French and English interface. The app is designed to run on iPhone, iPad, Mac and Apple Watch, including as a standalone Apple Watch app.",
+        fr: "Application SwiftUI créée pour permettre aux photographes de consulter rapidement des tableaux de correspondance essentiels liés à l'exposition, à l'ouverture et aux ISO, avec une interface bilingue français et anglais intuitive. L'application est conçue pour fonctionner sur iPhone, iPad, Mac et Apple Watch, y compris en tant qu'application Apple Watch autonome.",
+      },
+      objective: {
+        en: "Provide a practical reference tool that makes technical photography information quickly accessible across Apple devices.",
+        fr: "Fournir un outil de référence pratique qui rende rapidement accessibles des informations techniques de photographie sur différents appareils Apple.",
+      },
+      focus: {
+        en: [
+          "Reference tables centered on exposure, aperture and ISO relationships for fast consultation during photography work.",
+          "Bilingual French and English interface designed around clarity and rapid access to technical information.",
+          "Cross-device delivery across iPhone, iPad, Mac and Apple Watch, including standalone watch usage.",
+        ],
+        fr: [
+          "Tableaux de référence centrés sur les correspondances entre exposition, ouverture et ISO pour une consultation rapide pendant un usage photographique.",
+          "Interface bilingue français et anglais pensée autour de la clarté et de l'accès rapide à l'information technique.",
+          "Déploiement multi-appareils sur iPhone, iPad, Mac et Apple Watch, y compris en usage autonome sur montre.",
+        ],
+      },
+      technologies: [
+        "Swift",
+        "SwiftUI",
+        "iPhone",
+        "iPad",
+        "Mac",
+        "Apple Watch",
+        "Localization",
+        "Photography",
+        "Reference charts",
+        "Standalone watchOS app",
+      ],
+      outcomes: {
+        en: [
+          "Stronger Swift and SwiftUI practice on a concrete tool serving a real domain need.",
+          "Better localisation habits and clearer thinking about information density across different Apple form factors.",
+          "More confidence adapting one useful application to several devices without losing ergonomics.",
+        ],
+        fr: [
+          "Renforcement des compétences en Swift et SwiftUI sur un outil concret répondant à un besoin métier réel.",
+          "Meilleurs réflexes de localisation et réflexion plus claire sur la densité d'information selon les formats Apple.",
+          "Davantage d'aisance pour adapter une même application utile à plusieurs appareils sans perdre en ergonomie.",
+        ],
+      },
+      links: [
+        { label: { en: "GitHub", fr: "GitHub" }, href: "https://github.com/LukasMFR/Stop-Chart/", icon: "github" },
+      ],
+    },
+  ],
   contact: {
     kicker: { en: "Contact", fr: "Contact" },
     title: {
@@ -2383,8 +3121,8 @@ window.PORTFOLIO_DATA = {
       fr: "Échangeons autour de la cybersécurité, de l'infrastructure ou d'une future opportunité.",
     },
     intro: {
-      en: "I am happy to discuss academic projects, internships, apprenticeships, infrastructure security, IAM, cybersecurity topics or collaborative ideas. The site is bilingual and I can communicate in both French and English.",
-      fr: "Je peux échanger autour de projets académiques, d'opportunités, de sécurité d'infrastructure, d'IAM, de cybersécurité ou d'idées de collaboration. Le site est bilingue et je peux communiquer en français comme en anglais.",
+      en: "I am happy to discuss academic or personal projects, internships, apprenticeships, infrastructure security, IAM, cybersecurity topics or collaborative ideas. The site is bilingual and I can communicate in both French and English.",
+      fr: "Je peux échanger autour de projets académiques ou personnels, d'opportunités, de sécurité d'infrastructure, d'IAM, de cybersécurité ou d'idées de collaboration. Le site est bilingue et je peux communiquer en français comme en anglais.",
     },
     ctaTitle: {
       en: "Prefer direct contact?",

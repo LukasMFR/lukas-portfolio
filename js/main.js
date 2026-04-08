@@ -462,7 +462,7 @@
     `;
   }
 
-  function renderAcademicWork(item) {
+  function renderExpandableProject(item, meta) {
     const focus = translateList(item.focus).map((entry) => `<li>${entry}</li>`).join("");
     const outcomes = translateList(item.outcomes).map((entry) => `<li>${entry}</li>`).join("");
     const links = item.links?.length
@@ -478,7 +478,7 @@
             <div class="course-summary-icon">${icon(item.icon)}</div>
             <div class="course-summary-text">
               <h3 class="course-title">${translate(item.title)}</h3>
-              <div class="course-meta">${translate(item.level)} - ${translate(item.course)}</div>
+              <div class="course-meta">${meta}</div>
             </div>
           </div>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -510,6 +510,14 @@
         </div>
       </details>
     `;
+  }
+
+  function renderAcademicWork(item) {
+    return renderExpandableProject(item, `${translate(item.level)} - ${translate(item.course)}`);
+  }
+
+  function renderPersonalProject(item) {
+    return renderExpandableProject(item, translate(item.type));
   }
 
   function renderContinuousLearningCard(item) {
@@ -553,6 +561,27 @@
 
     const continuous = data.continuousLearning.map(renderContinuousLearningCard).join("");
 
+    const groupedPersonal = Object.entries(data.projects.personalGroups)
+      .map(([groupKey, group]) => {
+        const items = data.personalProjects.filter((item) => item.group === groupKey);
+        if (!items.length) return "";
+
+        return `
+          <div class="course-group">
+            <div class="course-group-header">
+              <div>
+                <h4 class="course-group-title">${translate(group.title)}</h4>
+                <p class="course-group-copy">${translate(group.copy)}</p>
+              </div>
+            </div>
+            <div class="accordion-grid">
+              ${items.map(renderPersonalProject).join("")}
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+
     elements.projects.innerHTML = `
       <div class="section-shell">
         <div class="section-heading">
@@ -592,6 +621,16 @@
               </div>
             </div>
             <div class="cert-grid">${continuous}</div>
+          </section>
+
+          <section class="course-group">
+            <div class="course-group-header">
+              <div>
+                <h3 class="course-group-title">${translate(data.projects.personalTitle)}</h3>
+                <p class="course-group-copy">${translate(data.projects.personalIntro)}</p>
+              </div>
+            </div>
+            ${groupedPersonal}
           </section>
         </div>
       </div>
