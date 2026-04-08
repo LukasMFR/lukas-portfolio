@@ -626,7 +626,7 @@
           <section class="course-group">
             <div class="course-group-header">
               <div>
-                <h3 class="course-group-title">${translate(data.projects.personalTitle)}</h3>
+                <h3 class="course-group-title course-group-title-strong">${translate(data.projects.personalTitle)}</h3>
                 <p class="course-group-copy">${translate(data.projects.personalIntro)}</p>
               </div>
             </div>
