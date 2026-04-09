@@ -28,6 +28,7 @@
 
   const SECTION_IDS = ["home", "about", "skills", "projects", "contact"];
   const SUPPORTED_LANGUAGES = new Set(["en", "fr"]);
+  const HEADER_MENU_BREAKPOINT = 1100;
 
   function translate(value, language = state.language) {
     if (value === null || value === undefined) return "";
@@ -202,10 +203,17 @@
         </nav>
 
         <div class="header-actions">
-          <div class="desktop-only">${renderLanguageSwitch()}</div>
-          <a class="button button-secondary desktop-only" href="${cvLink.href}" target="_blank" rel="noreferrer noopener">
+          <div class="desktop-only header-lang">${renderLanguageSwitch()}</div>
+          <a
+            class="button button-secondary desktop-only header-cv"
+            href="${cvLink.href}"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="${translate(cvLink.label)}"
+          >
             ${icon("document")}
-            <span>${translate(cvLink.label)}</span>
+            <span class="header-cv-label-full">${translate(cvLink.label)}</span>
+            <span class="header-cv-label-short" aria-hidden="true">CV</span>
           </a>
           <button
             class="icon-button mobile-menu-toggle"
@@ -868,7 +876,7 @@
       { passive: true }
     );
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 880) {
+      if (window.innerWidth > HEADER_MENU_BREAKPOINT) {
         closeMenu();
       }
       ensureVisibleReveals();
