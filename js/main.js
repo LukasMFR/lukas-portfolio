@@ -33,6 +33,38 @@
   const SECTION_IDS = ["home", "about", "skills", "projects", "contact"];
   const SUPPORTED_LANGUAGES = new Set(["en", "fr"]);
   const HEADER_MENU_BREAKPOINT = 1100;
+  const TECH_LOGO_ALIASES = {
+    ansible: "ansible",
+    apache: "apache",
+    bootstrap5: "bootstrap",
+    c: "c",
+    cplusplus: "cplusplus",
+    css: "css3",
+    css3: "css3",
+    debian12: "debian",
+    docker: "docker",
+    firebase: "firebase",
+    flask: "flask",
+    grafana: "grafana",
+    html: "html5",
+    html5: "html5",
+    java: "java",
+    javascript: "javascript",
+    jira: "jira",
+    mariadb: "mariadb",
+    mysql: "mysql",
+    pandas: "pandas",
+    php: "php",
+    php8: "php",
+    powershell: "powershell",
+    proxmox: "proxmox",
+    python: "python",
+    selenium: "selenium",
+    terraform: "terraform",
+    ubuntu: "ubuntu",
+    windows11: "windows11",
+    windowsserver: "windows11",
+  };
 
   function translate(value, language = state.language) {
     if (value === null || value === undefined) return "";
@@ -61,6 +93,14 @@
     return SUPPORTED_LANGUAGES.has(lang) ? lang : "en";
   }
 
+  function normalizeTechName(value) {
+    return String(value)
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "");
+  }
+
   function closestFromTarget(target, selector) {
     const element =
       target && typeof target.closest === "function"
@@ -74,6 +114,14 @@
 
   function iconAsset(name) {
     return `assets/images/icons/${name}.webp`;
+  }
+
+  function techLogoAsset(name) {
+    return `assets/images/tech-logos/${name}.webp`;
+  }
+
+  function resolveTechLogo(value) {
+    return TECH_LOGO_ALIASES[normalizeTechName(value)] || "";
   }
 
   function icon(name, options = {}) {
@@ -91,6 +139,21 @@
     return `
       <span class="${classes}" data-icon-name="${name}" ${ariaHidden}>
         <img src="${iconAsset(name)}" alt="${alt}" loading="lazy" decoding="async" />
+      </span>
+    `;
+  }
+
+  function techLogoMarkup(value, options = {}) {
+    const { className = "" } = options;
+    const slug = resolveTechLogo(value);
+
+    if (!slug) return "";
+
+    const classes = ["tech-mark", className].filter(Boolean).join(" ");
+
+    return `
+      <span class="${classes}" aria-hidden="true">
+        <img src="${techLogoAsset(slug)}" alt="" loading="lazy" decoding="async" />
       </span>
     `;
   }
@@ -118,10 +181,50 @@
     `;
   }
 
-  function pillList(items, className, itemClass) {
+  function renderChip(item, itemClass, options = {}) {
+    const label = translate(item);
+    const techLogo = options.withTechLogos ? techLogoMarkup(label) : "";
+    const classes = [itemClass, techLogo ? "has-tech-logo" : ""].filter(Boolean).join(" ");
+
+    return `
+      <span class="${classes}">
+        ${techLogo}
+        <span class="chip-label">${label}</span>
+      </span>
+    `;
+  }
+
+  function pillList(items, className, itemClass, options = {}) {
     return `
       <div class="${className}">
-        ${items.map((item) => `<span class="${itemClass}">${item}</span>`).join("")}
+        ${items.map((item) => renderChip(item, itemClass, options)).join("")}
+      </div>
+    `;
+  }
+
+  function techLogoStrip(items, options = {}) {
+    const { className = "project-tech-strip", limit = 5 } = options;
+    const logos = [];
+    const seen = new Set();
+
+    items.forEach((item) => {
+      const label = translate(item);
+      const slug = resolveTechLogo(label);
+
+      if (!slug || seen.has(slug)) return;
+
+      seen.add(slug);
+      logos.push(label);
+    });
+
+    if (!logos.length) return "";
+
+    return `
+      <div class="${className}" aria-hidden="true">
+        ${logos
+          .slice(0, limit)
+          .map((item) => techLogoMarkup(item, { className: "project-tech-mark" }))
+          .join("")}
       </div>
     `;
   }
@@ -423,15 +526,15 @@
               </div>
             </div>
             <p class="skill-copy">${translate(category.copy)}</p>
-            ${pillList(category.items, "tech-list", "tech-pill")}
+            ${pillList(category.items, "tech-list", "tech-pill", { withTechLogos: true })}
           </article>
         `
       )
       .join("");
 
-    const toolCloud = data.skills.toolCloud
-      .map((tool) => `<span class="tool-chip">${tool}</span>`)
-      .join("");
+    const toolCloud = pillList(data.skills.toolCloud, "tool-cloud", "tool-chip", {
+      withTechLogos: true,
+    });
 
     elements.skills.innerHTML = `
       <div class="section-shell">
@@ -445,7 +548,7 @@
 
         <div class="about-card glass-panel">
           <h3 class="timeline-title">${icon("spark", { variant: "accent" })}<span>${translate(data.skills.toolsLabel)}</span></h3>
-          <div class="tool-cloud">${toolCloud}</div>
+          ${toolCloud}
         </div>
       </div>
     `;
@@ -459,10 +562,11 @@
       <article class="project-card glass-panel">
         <div class="project-media">
           <div class="project-badge">${icon(project.icon, { variant: "accent" })}<span>${project.year}</span></div>
-          <div>
+          <div class="project-media-copy">
             <h3 class="project-title">${translate(project.title)}</h3>
             <p class="project-subtitle">${translate(project.subtitle)}</p>
           </div>
+          ${techLogoStrip(project.technologies)}
         </div>
 
         <p class="project-copy">${translate(project.overview)}</p>

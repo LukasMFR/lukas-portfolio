@@ -937,6 +937,32 @@ button {
   font-size: 0.9rem;
 }
 
+.chip-label {
+  display: block;
+  line-height: 1.2;
+}
+
+.tech-mark {
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0.18rem;
+  border-radius: 0.42rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: var(--logo-surface);
+  border: 1px solid rgba(17, 32, 51, 0.08);
+  box-shadow: 0 6px 14px rgba(17, 32, 51, 0.08);
+}
+
+.tech-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .timeline-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1134,6 +1160,9 @@ button {
 }
 
 .tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   padding: 0.55rem 0.8rem;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -1167,7 +1196,7 @@ button {
   min-height: 11rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1rem;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.28), transparent 35%),
     linear-gradient(135deg, var(--accent-soft), var(--accent-alt-soft));
@@ -1203,10 +1232,30 @@ button {
   font-size: 1.15rem;
 }
 
+.project-media-copy {
+  display: grid;
+  gap: 0.22rem;
+}
+
 .project-subtitle {
   margin: 0.2rem 0 0;
   color: var(--text-muted);
   font-size: 0.92rem;
+}
+
+.project-tech-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: auto;
+}
+
+.project-tech-mark {
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0.22rem;
+  border-radius: 0.68rem;
+  box-shadow: 0 10px 22px rgba(17, 32, 51, 0.1);
 }
 
 .project-copy {
