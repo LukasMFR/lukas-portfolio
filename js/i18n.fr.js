@@ -72,19 +72,16 @@ window.PORTFOLIO_DATA_FR = {
     "profilePhoto": {
       "src": "assets/images/profile/profile-photo.webp",
       "alt": {
-        "fr": "Emplacement du portrait de Lukas Mauffré"
+        "fr": "Portrait de Lukas Mauffré"
       }
     },
     "headerAnimoji": {
-      "src": "assets/images/profile/animoji-header.webp",
-      "alt": {
-        "fr": "Emplacement de l'Animoji d'en-tête de Lukas Mauffré"
-      }
+      "src": "assets/images/profile/animoji-header.webp"
     },
     "animoji": {
       "src": "assets/images/profile/animoji-hero.webp",
       "alt": {
-        "fr": "Emplacement de l'Animoji de Lukas Mauffré"
+        "fr": "Animoji de Lukas Mauffré"
       }
     },
     "socials": [
@@ -161,20 +158,8 @@ window.PORTFOLIO_DATA_FR = {
     "cvCta": {
       "fr": "Voir mon CV"
     },
-    "portraitTitle": {
-      "fr": "Profil et identité visuelle"
-    },
-    "portraitCopy": {
-      "fr": "Remplacez ce placeholder par votre photo en gardant le même chemin pour un déploiement immédiat."
-    },
-    "noteTitle": {
-      "fr": "Focus actuel"
-    },
-    "noteCopy": {
-      "fr": "Sécurisation des postes, gouvernance BitLocker, intégration AD, bases IAM et laboratoires cyber concrets."
-    },
     "animojiLabel": {
-      "fr": "Emplacement Animoji"
+      "fr": "Animoji décoratif de Lukas Mauffré"
     },
     "stats": [
       {
@@ -263,7 +248,7 @@ window.PORTFOLIO_DATA_FR = {
       "image": {
         "src": "assets/images/logos/ece-logo.webp",
         "alt": {
-          "fr": "Placeholder du logo ECE Paris"
+          "fr": "Logo de l'ECE Paris"
         }
       },
       "summary": {
@@ -291,7 +276,7 @@ window.PORTFOLIO_DATA_FR = {
       "image": {
         "src": "assets/images/logos/ece-logo.webp",
         "alt": {
-          "fr": "Placeholder du logo ECE Paris"
+          "fr": "Logo de l'ECE Paris"
         }
       },
       "summary": {
@@ -319,7 +304,7 @@ window.PORTFOLIO_DATA_FR = {
       "image": {
         "src": "assets/images/logos/ece-logo.webp",
         "alt": {
-          "fr": "Placeholder du logo ECE Paris"
+          "fr": "Logo de l'ECE Paris"
         }
       },
       "summary": {
@@ -347,7 +332,7 @@ window.PORTFOLIO_DATA_FR = {
       "image": {
         "src": "assets/images/logos/omnes-london-logo.webp",
         "alt": {
-          "fr": "Placeholder du logo OMNES Education London School"
+          "fr": "Logo de l'OMNES Education London School"
         }
       },
       "summary": {
@@ -399,7 +384,7 @@ window.PORTFOLIO_DATA_FR = {
       "image": {
         "src": "assets/images/logos/ufcv-logo.webp",
         "alt": {
-          "fr": "Placeholder du logo UFCV"
+          "fr": "Logo de l'UFCV"
         }
       },
       "summary": {
@@ -436,7 +421,7 @@ window.PORTFOLIO_DATA_FR = {
       "image": {
         "src": "assets/images/logos/dirisi-logo.webp",
         "alt": {
-          "fr": "Placeholder du logo DIRISI"
+          "fr": "Logo de la DIRISI"
         }
       },
       "summary": {
