@@ -5,7 +5,9 @@
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
   --safe-area-left: env(safe-area-inset-left, 0px);
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
-  --font-mono: "SFMono-Regular", "JetBrains Mono", "Menlo", monospace;
+  --font-mono:
+    "SFMono-Regular", ui-monospace, "JetBrains Mono", "Menlo", "Monaco",
+    "Cascadia Mono", "Segoe UI Mono", monospace;
   --bg: #eef3f8;
   --bg-strong: #f7fafc;
   --surface: rgba(255, 255, 255, 0.76);
@@ -691,6 +693,7 @@ button {
   display: inline-flex;
   align-items: center;
   min-height: 1.6rem;
+  font-family: "SF Mono", var(--font-mono);
 }
 
 .typewriter-cursor {
