@@ -1626,7 +1626,7 @@ window.PORTFOLIO_DATA_EN = {
       "focus": {
         "en": [
           "Classical ciphers such as Caesar, monoalphabetic substitutions, Vigenere, Hill, Vernam and Enigma, along with brute force, frequency analysis, Kasiski and index of coincidence.",
-          "Modular arithmetic, prime numbers, Euclid and extended Euclid, Bezout coefficients, modular inverses, Euler's totient, Fermat-Euler theorem, Chinese remainder theorem and modular exponentiation.",
+          "Modular arithmetic, prime numbers, Euclid and extended Euclid, Bezout coefficients, modular inverses, Euler’s totient, Fermat-Euler theorem, Chinese remainder theorem and modular exponentiation.",
           "Modern systems and ideas such as symmetric and asymmetric crypto, Diffie-Hellman, El Gamal, RSA, digital signatures, hashing and information theory notions."
         ]
       },
@@ -3053,7 +3053,7 @@ window.PORTFOLIO_DATA_EN = {
       "en": "Contact"
     },
     "title": {
-      "en": "Let's connect around cybersecurity, infrastructure or a future opportunity."
+      "en": "Let’s connect around cybersecurity, infrastructure or a future opportunity."
     },
     "intro": {
       "en": "I am happy to discuss academic or personal projects, internships, apprenticeships, infrastructure security, IAM, cybersecurity topics or collaborative ideas. The site is bilingual and I can communicate in both French and English."
