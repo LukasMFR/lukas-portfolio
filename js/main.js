@@ -1,5 +1,9 @@
 (function () {
-  const data = window.PORTFOLIO_DATA;
+  const dataByLanguage = {
+    en: window.PORTFOLIO_DATA_EN,
+    fr: window.PORTFOLIO_DATA_FR,
+  };
+  let data = dataByLanguage.en || dataByLanguage.fr;
 
   if (!data) {
     return;
@@ -122,6 +126,11 @@
     `;
   }
 
+  function getMenuLabel() {
+    const key = state.menuOpen ? "closeMenuLabel" : "mobileMenuLabel";
+    return translate(data.navigation[key]);
+  }
+
   function renderLanguageSwitch() {
     const label = state.language === "fr" ? "Sélecteur de langue" : "Language switch";
 
@@ -176,10 +185,7 @@
       icon: "document",
     };
 
-    const menuLabel = translate({
-      en: state.menuOpen ? data.navigation.closeMenuLabel.en : data.navigation.mobileMenuLabel.en,
-      fr: state.menuOpen ? data.navigation.closeMenuLabel.fr : data.navigation.mobileMenuLabel.fr,
-    });
+    const menuLabel = getMenuLabel();
 
     elements.header.innerHTML = `
       <div class="nav-shell glass-panel">
@@ -795,10 +801,7 @@
 
     const menuToggle = elements.header.querySelector("[data-menu-toggle]");
     const mobileMenu = elements.header.querySelector("[data-mobile-menu]");
-    const menuLabel = translate({
-      en: state.menuOpen ? data.navigation.closeMenuLabel.en : data.navigation.mobileMenuLabel.en,
-      fr: state.menuOpen ? data.navigation.closeMenuLabel.fr : data.navigation.mobileMenuLabel.fr,
-    });
+    const menuLabel = getMenuLabel();
 
     elements.header.classList.toggle("is-menu-open", state.menuOpen);
 
@@ -1047,6 +1050,7 @@
     const nextLanguage = normalizeLanguage(lang);
 
     state.language = nextLanguage;
+    data = dataByLanguage[nextLanguage] || dataByLanguage.en || dataByLanguage.fr;
     renderApp();
   }
 

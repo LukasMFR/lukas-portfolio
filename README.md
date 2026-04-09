@@ -8,7 +8,6 @@ Static bilingual portfolio built with plain HTML, CSS and JavaScript for direct 
 - `css/style.css`: theme, layout, responsive rules and animations
 - `js/i18n.en.js`: English translation data
 - `js/i18n.fr.js`: French translation data
-- `js/i18n.js`: minimal assembler that rebuilds the bilingual portfolio data object
 - `js/main.js`: rendering, language detection, language switch, mobile menu and typewriter effect
 - `assets/images/profile/`: profile photo and Animoji placeholders
 - `assets/images/logos/`: school, company and experience logos
