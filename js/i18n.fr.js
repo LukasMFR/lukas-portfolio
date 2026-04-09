@@ -124,26 +124,26 @@ window.PORTFOLIO_DATA_FR = {
       "fr": "Cybersécurité, systèmes, réseaux, IAM, gouvernance et développement"
     },
     "subtitle": {
-      "fr": "Étudiant en Bachelor qui construit des systèmes numériques sûrs, fiables et compréhensibles."
+      "fr": "Étudiant en Bachelor, je construis des systèmes numériques sûrs, fiables et compréhensibles."
     },
     "description": {
-      "fr": "Je suis un étudiant orienté cybersécurité, avec un intérêt fort pour les systèmes, les réseaux, l'infrastructure, la gestion des identités et des accès, le développement et la gouvernance. Mon travail relie pratique en laboratoire, administration sécurisée, sécurité offensive et défensive, ainsi que capacité à expliquer clairement des sujets complexes dans des contextes techniques et organisationnels."
+      "fr": "Je suis un étudiant orienté cybersécurité, avec un fort intérêt pour les systèmes, les réseaux, l'infrastructure, la gestion des identités et des accès, le développement et la gouvernance. Mon travail relie la pratique en laboratoire, l'administration sécurisée, la sécurité offensive et défensive, ainsi que la capacité à expliquer clairement des sujets complexes dans des contextes techniques et organisationnels."
     },
     "roles": [
       {
         "fr": "Étudiant en cybersécurité"
       },
       {
-        "fr": "Pratiquant systèmes et réseaux"
+        "fr": "Pratique des systèmes et réseaux"
       },
       {
-        "fr": "Apprenant IAM et infrastructure"
+        "fr": "En apprentissage de l'IAM et de l'infrastructure"
       },
       {
-        "fr": "Développeur avec une sensibilité ops"
+        "fr": "Développeur avec une sensibilité opérationnelle"
       },
       {
-        "fr": "Profil sécurité sensible à la gouvernance"
+        "fr": "Profil sécurité attentif à la gouvernance"
       }
     ],
     "primaryCta": {
@@ -196,11 +196,11 @@ window.PORTFOLIO_DATA_FR = {
       "fr": "Un profil construit par la cybersécurité, l'infrastructure et l'apprentissage par la pratique."
     },
     "intro": {
-      "fr": "Mon parcours à l'ECE Paris combine cybersécurité, systèmes, réseaux, développement, IAM et gouvernance. J'aime passer de la profondeur technique à une communication structurée : de l'analyse de paquets, du hardening et des laboratoires de pentest à la conformité, à la régulation de l'IA, à l'analyse de risque et au pilotage de projet."
+      "fr": "Mon parcours à l'ECE Paris combine cybersécurité, systèmes, réseaux, développement, IAM et gouvernance. J'aime passer de la profondeur technique à une communication structurée, de l'analyse de paquets, du hardening et des laboratoires de pentest jusqu'à la conformité, la régulation de l'IA, l'analyse de risque et le pilotage de projet."
     },
     "paragraphs": [
       {
-        "fr": "Je suis particulièrement intéressé par les infrastructures sécurisées, le contrôle d'accès, l'amélioration de la posture défensive et la manière dont les décisions techniques s'alignent avec les contraintes opérationnelles, réglementaires et humaines. C'est pour cela que mon portfolio mêle sécurité offensive, hardening, ingénierie réseau, cryptographie, documentation, GRC et approche orientée service."
+        "fr": "Je suis particulièrement intéressé par les infrastructures sécurisées, le contrôle d'accès, l'amélioration de la posture défensive et la manière dont les décisions techniques s'articulent avec les contraintes opérationnelles, réglementaires et humaines. C'est pour cela que mon portfolio mêle sécurité offensive, hardening, ingénierie réseau, cryptographie, documentation, GRC et une approche orientée service."
       },
       {
         "fr": "Au-delà de la technique, je valorise la pédagogie, le travail en équipe, la communication bilingue et une sécurité utile. Mon bénévolat chez Emmaüs Connect, mes présentations orales sur le RGPD et la régulation de l'IA, ainsi que mon travail dans des organisations réelles, m'ont aidé à relier la cybersécurité aux personnes, aux processus et à la continuité de service."
@@ -280,7 +280,7 @@ window.PORTFOLIO_DATA_FR = {
         }
       },
       "summary": {
-        "fr": "Année très orientée projet combinant développement web full stack, traitement de données, scraping, bases de données, sécurité web, Java, C++, C et workflows de création assistés par IA."
+        "fr": "Année très orientée projet combinant développement web full stack, traitement de données, scraping, bases de données, sécurité web, Java, C++ et C, ainsi que des processus de création assistés par IA."
       },
       "highlights": {
         "fr": [
@@ -340,8 +340,8 @@ window.PORTFOLIO_DATA_FR = {
       },
       "highlights": {
         "fr": [
-          "Geopolitics and International Relations Theories.",
-          "International Law and Key Institutions: UN, NATO et sujets de gouvernance mondiale.",
+          "Géopolitique et théories des relations internationales.",
+          "Droit international et institutions clés : ONU, OTAN et grands sujets de gouvernance mondiale.",
           "Renforcement de l'anglais, ouverture multiculturelle et meilleure compréhension des dynamiques de sécurité internationale."
         ]
       }
@@ -358,11 +358,11 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "En parallèle du Bachelor"
       },
       "summary": {
-        "fr": "Modules complémentaires et certifications élargissant le cursus vers le Zero Trust, le hardening, les firewalls, les IDS/IPS, les VPN, le contrôle d'accès, les bases de la data science et une culture cyber structurée."
+        "fr": "Modules complémentaires et certifications élargissant le cursus vers le Zero Trust, le hardening, les pare-feu, les IDS/IPS, les VPN, le contrôle d'accès, les bases de la data science et une culture cyber structurée."
       },
       "highlights": {
         "fr": [
-          "SecNumacadémie de l'ANSSI validée avec 100 pour cent sur Panorama de la SSI, sécurité de l'authentification, sécurité sur Internet et sécurité du poste de travail.",
+          "SecNumacadémie de l'ANSSI validée avec 100 % sur Panorama de la SSI, sécurité de l'authentification, sécurité sur Internet et sécurité du poste de travail.",
           "Cisco Introduction to Cybersecurity et plusieurs parcours NetAcad : Cyber Threat Management, Endpoint Security, Junior Cybersecurity Analyst Career Path, Network Defense, Networking Basics et Networking Devices and Initial Configuration.",
           "Contenus cyber TECHAWAY ainsi que le certificat Python Fundamentals for Data Science."
         ]
@@ -463,7 +463,7 @@ window.PORTFOLIO_DATA_FR = {
       "fr": "Compétences"
     },
     "title": {
-      "fr": "Profondeur technique, culture sécurité et delivery structuré."
+      "fr": "Profondeur technique, culture sécurité et exécution structurée."
     },
     "intro": {
       "fr": "Mon profil se situe à l'intersection de l'infrastructure, de la sécurité, du développement, de l'IAM, de la gouvernance et de la communication. Les catégories ci-dessous résument les grands domaines qui reviennent dans mon cursus, mes projets académiques et personnels, mon alternance et mes engagements."
@@ -614,16 +614,16 @@ window.PORTFOLIO_DATA_FR = {
           "GRC",
           "MEHARI",
           "EBIOS",
-          "GDPR",
+          "RGPD",
           "EU AI Act",
           "HDS",
           "RACI",
           "PAM",
           "MFA",
-          "Least privilege",
-          "Auditability",
-          "Policy writing",
-          "Continuity planning"
+          "Moindre privilège",
+          "Traçabilité",
+          "Rédaction de politiques",
+          "Planification de la continuité"
         ]
       },
       {
@@ -632,7 +632,7 @@ window.PORTFOLIO_DATA_FR = {
           "fr": "Gestion de projet et communication"
         },
         "copy": {
-          "fr": "Réflexes Agile, Jira, planification Gantt, présentations orales, vulgarisation technique, travail en équipe et communication anglais/français."
+          "fr": "Réflexes Agile, Jira, planification Gantt, présentations orales, vulgarisation technique, travail en équipe et communication en français comme en anglais."
         },
         "items": [
           "Jira",
@@ -642,10 +642,10 @@ window.PORTFOLIO_DATA_FR = {
           "Story points",
           "Gantt",
           "Documentation",
-          "Public speaking",
-          "Teamwork",
-          "Bilingual communication",
-          "Functional analysis"
+          "Prise de parole en public",
+          "Travail en équipe",
+          "Communication bilingue",
+          "Analyse fonctionnelle"
         ]
       }
     ],
@@ -691,7 +691,7 @@ window.PORTFOLIO_DATA_FR = {
       "fr": "Projets phares"
     },
     "featuredIntro": {
-      "fr": "Une sélection de projets qui représentent le mieux l'étendue de mon profil : infrastructure, orchestration de cyber range, applications full stack, pipelines data, programmation bas niveau et logiciel interactif."
+      "fr": "Une sélection de projets qui représente le mieux l'étendue de mon profil : infrastructure, orchestration de cyber range, applications full stack, pipelines data, programmation bas niveau et logiciel interactif."
     },
     "academicTitle": {
       "fr": "Matières académiques et travaux appliqués"
@@ -758,7 +758,7 @@ window.PORTFOLIO_DATA_FR = {
           "fr": "Web et interfaces responsives"
         },
         "copy": {
-          "fr": "Projets front-end responsives et petits outils web pensés pour un usage direct et utile au quotidien sur desktop comme sur mobile."
+          "fr": "Projets front-end responsives et petits outils web pensés pour un usage direct et utile au quotidien sur ordinateur comme sur mobile."
         }
       },
       "python": {
@@ -771,10 +771,10 @@ window.PORTFOLIO_DATA_FR = {
       },
       "tooling": {
         "title": {
-          "fr": "CLI, shell et outils de workflow"
+          "fr": "CLI, shell et outils pour les flux de travail"
         },
         "copy": {
-          "fr": "Scripts utilitaires et outils de développement créés pour gagner du temps, préserver la qualité et simplifier des tâches techniques récurrentes."
+          "fr": "Scripts utilitaires et outils de développement créés pour faire gagner du temps, préserver la qualité et simplifier des tâches techniques récurrentes."
         }
       },
       "apple": {
@@ -822,7 +822,7 @@ window.PORTFOLIO_DATA_FR = {
       ],
       "outcomes": {
         "fr": [
-          "Vision de bout en bout d'une logique réaliste deploy -> configure -> monitor -> simulate.",
+          "Vision de bout en bout d'une logique réaliste : déployer -> configurer -> superviser -> simuler.",
           "Expérience concrète sur des concepts offensifs et défensifs dans une architecture cohérente.",
           "Coordination d'équipe sur un projet technique important avec composantes infrastructure et applicative."
         ]
@@ -859,7 +859,7 @@ window.PORTFOLIO_DATA_FR = {
       "highlights": {
         "fr": [
           "Application structurée développée avec HTML5, CSS3, JavaScript, Bootstrap 5, PHP 8+ et MySQL ou MariaDB.",
-          "Logique de tableau de bord, gestion des rôles, fonctionnalités collaboratives et plusieurs branches Git dédiées à des évolutions comme le dark mode ou les emails.",
+          "Logique de tableau de bord, gestion des rôles, fonctionnalités collaboratives et plusieurs branches Git dédiées à des évolutions comme le mode sombre ou les emails.",
           "Excellent terrain d'entraînement pour le développement full stack, la structuration de projet, le travail en équipe et le versioning."
         ]
       },
@@ -877,7 +877,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": [
           "Renforcement de la compréhension de la structure applicative, des modules et des fonctionnalités adossées à la donnée.",
           "Expérience dans la conception d'un produit web orienté métier et réellement utile.",
-          "Meilleure compréhension du delivery collaboratif avec branches Git et responsabilités par fonctionnalité."
+          "Meilleure compréhension du travail collaboratif, avec branches Git et responsabilités par fonctionnalité."
         ]
       },
       "links": [
@@ -912,7 +912,7 @@ window.PORTFOLIO_DATA_FR = {
       "highlights": {
         "fr": [
           "Utilisation de Python, Pandas, Requests, BeautifulSoup, Selenium, MySQL, Matplotlib et Seaborn.",
-          "Couvre SQL, contraintes d'intégrité, automatisation, nettoyage, transformation et workflows d'export.",
+          "Couvre SQL, contraintes d'intégrité, automatisation, nettoyage, transformation et processus d'export.",
           "Produit des analyses concrètes sur les catégories, les prix et les notes en structurant le travail comme un projet ETL."
         ]
       },
@@ -933,7 +933,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": [
           "Compréhension concrète de toute la chaîne de la donnée, de l'extraction à l'interprétation visuelle.",
           "Renforcement de la structuration de projet en Python et du raisonnement orienté data.",
-          "Meilleure habitude de combiner automatisation, stockage et analyse dans un même workflow cohérent."
+          "Meilleure habitude de combiner automatisation, stockage et analyse dans un même flux de travail cohérent."
         ]
       },
       "links": [
@@ -961,7 +961,7 @@ window.PORTFOLIO_DATA_FR = {
       "highlights": {
         "fr": [
           "Intègre authentification Firebase, recommandations OpenAI, OpenWeather, Booking via RapidAPI, Amadeus, Yelp, Leaflet, Nominatim et Unsplash.",
-          "Développé dans un contexte de hackathon contraint avec une interface moderne, responsive et une forte valeur produit.",
+          "Développé dans un contexte de hackathon contraint, avec une interface moderne, responsive et une forte valeur produit.",
           "Montre une capacité de prototypage rapide, d'intégration d'API et de travail d'équipe sous contrainte de temps."
         ]
       },
@@ -1008,7 +1008,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Projet de programmation système et réseau sous Linux en C"
       },
       "overview": {
-        "fr": "Travail de projet autour de la gestion des processus Unix, de l'exécution foreground et background, des signaux, de l'IPC et de la communication TCP client-serveur via sockets sous Linux."
+        "fr": "Travail de projet autour de la gestion des processus Unix, de l'exécution au premier plan et en arrière-plan, des signaux, de l'IPC et de la communication TCP client-serveur via sockets sous Linux."
       },
       "highlights": {
         "fr": [
@@ -1060,7 +1060,7 @@ window.PORTFOLIO_DATA_FR = {
       "highlights": {
         "fr": [
           "Développé avec HTML, CSS, JavaScript, PHP et MySQL dans un environnement type XAMPP.",
-          "Intègre parcours utilisateur et administrateur, responsive design, modélisation MCD et MLD, documentation et livraison complète de la conception à la soutenance.",
+          "Intègre parcours utilisateur et administrateur, adaptation aux différents écrans, modélisation MCD et MLD, documentation et livraison complète de la conception à la soutenance.",
           "Projet fondateur full stack qui relie conception fonctionnelle et mise en œuvre."
         ]
       },
@@ -1220,18 +1220,18 @@ window.PORTFOLIO_DATA_FR = {
       "focus": {
         "fr": [
           "Transparence, explicabilité, sécurité, droit à l'oubli et minimisation des données.",
-          "Privacy by design, anonymisation et nouvelles approches de gestion de l'identité.",
+          "Protection des données dès la conception, anonymisation et nouvelles approches de gestion de l'identité.",
           "Travail de vulgarisation technique et juridique, présentation orale et coordination en équipe."
         ]
       },
       "technologies": [
-        "GDPR",
-        "Privacy by Design",
+        "RGPD",
+        "Protection des données dès la conception",
         "Anonymisation",
-        "AI",
+        "IA",
         "Blockchain",
         "IoT",
-        "Identity management"
+        "Gestion des identités"
       ],
       "outcomes": {
         "fr": [
@@ -1343,7 +1343,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Enseignement complet de sécurité offensive couvrant tout le cycle d'un pentest, puis renforcé par plusieurs laboratoires en environnements contrôlés comme Kali Linux, Metasploitable2 et DVWA."
       },
       "objective": {
-        "fr": "Comprendre comment cadrer, reconnaître, énumérer, analyser, exploiter et restituer des vulnérabilités dans un cadre légal et éthique."
+        "fr": "Comprendre comment cadrer, repérer, énumérer, analyser, exploiter et restituer des vulnérabilités dans un cadre légal et éthique."
       },
       "focus": {
         "fr": [
@@ -1475,7 +1475,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Durcissement de Windows et Debian dans une logique d'amélioration continue"
       },
       "context": {
-        "fr": "Travaux d'évaluation de posture défensive et de durcissement sur postes Windows et serveurs Linux, associés à une réflexion sur la gestion des vulnérabilités et la gouvernance du patch management en entreprise."
+        "fr": "Travaux d'évaluation de posture défensive et de durcissement sur postes Windows et serveurs Linux, associés à une réflexion sur la gestion des vulnérabilités et la gouvernance de la gestion des correctifs en entreprise."
       },
       "objective": {
         "fr": "Évaluer une posture de sécurité initiale, comparer Windows et Linux, appliquer des remédiations guidées par des référentiels et raisonner avec des contraintes réalistes d'entreprise."
@@ -1576,7 +1576,7 @@ window.PORTFOLIO_DATA_FR = {
       "focus": {
         "fr": [
           "Sécurité des mots de passe, hachage, salage, KDF comme PBKDF2, bcrypt, scrypt et Argon2, ainsi que risques de brute force, credential stuffing et rainbow tables.",
-          "Tokens et fédération avec JWT, access et refresh tokens, SAML, OAuth 2.0, OpenID Connect, rôles IdP et SP, Kerberos et services d'annuaire.",
+          "Tokens et fédération avec JWT, jetons d'accès et de rafraîchissement, SAML, OAuth 2.0, OpenID Connect, rôles IdP et SP, Kerberos et services d'annuaire.",
           "TP sur l'authentification Linux par mot de passe, Keycloak avec Docker et realm local, clients OIDC, MFA par OTP, PKI OpenSSL, HTTPS Apache, OpenLDAP, SimpleSAMLphp, puis mini-projet combinant Active Directory, DNS, GPO, politiques de mot de passe et OpenVPN avec certificats X.509 et révocation CRL."
         ]
       },
@@ -1618,7 +1618,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Fondements mathématiques de la cryptographie moderne"
       },
       "context": {
-        "fr": "Matière centrée sur la théorie derrière les systèmes cryptographiques classiques et modernes, des chiffrements historiques à l'arithmétique modulaire et aux tests de primalité."
+        "fr": "Matière centrée sur la théorie des systèmes cryptographiques classiques et modernes, des chiffrements historiques à l'arithmétique modulaire et aux tests de primalité."
       },
       "objective": {
         "fr": "Construire une compréhension rigoureuse des mécanismes mathématiques qui sous-tendent chiffrement, signatures, échange de clés et cryptanalyse."
@@ -1657,19 +1657,19 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "AGILE"
       },
       "title": {
-        "fr": "Scrum versus planification classique sur un MVP e-commerce"
+        "fr": "Scrum et planification classique sur un MVP e-commerce"
       },
       "context": {
         "fr": "Travail comparatif entre gestion de projet prédictive et Scrum, à partir d'un cas fil rouge de MVP e-commerce inspiré d'Amazon."
       },
       "objective": {
-        "fr": "Comprendre comment le delivery itératif, la logique de backlog et la priorisation par la valeur diffèrent d'une planification séquentielle et d'une communication type Gantt."
+        "fr": "Comprendre comment la livraison itérative, la logique de backlog et la priorisation par la valeur diffèrent d'une planification séquentielle et d'une communication de type Gantt."
       },
       "focus": {
         "fr": [
           "Espace Scrum Jira avec épiques, user stories, critères d'acceptation, story points, tâches, sous-tâches, statuts et simulation de sprint.",
           "Planification Gantt complète avec cadrage, design, back-end, front-end, tests, déploiement, documentation, jalons et répartition des rôles.",
-          "Réflexion sur la logique MVP, le delivery incrémental, la gouvernance et la complémentarité entre Scrum pour l'exécution et Gantt pour la vision globale."
+          "Réflexion sur la logique MVP, la livraison incrémentale, la gouvernance et la complémentarité entre Scrum pour l'exécution et Gantt pour la vision globale."
         ]
       },
       "technologies": [
@@ -1683,7 +1683,7 @@ window.PORTFOLIO_DATA_FR = {
       ],
       "outcomes": {
         "fr": [
-          "Compréhension plus claire des modèles de delivery et des choix de gouvernance de projet.",
+          "Compréhension plus claire des modèles de livraison et des choix de gouvernance de projet.",
           "Meilleure habitude de traduire la valeur produit en exécution structurée.",
           "Plus de confiance pour discuter du périmètre, de la priorisation et de la planification."
         ]
@@ -1743,7 +1743,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Sprint Data"
       },
       "title": {
-        "fr": "Workflow SQL avancé, nettoyage, visualisation et web scraping"
+        "fr": "SQL avancé, nettoyage, visualisation et web scraping"
       },
       "context": {
         "fr": "Travaux couvrant toute la chaîne de la donnée via SQL, contraintes d'intégrité, concurrence, nettoyage et visualisation en Python, ainsi que des exercices de scraping avant le projet ETL final."
@@ -1900,7 +1900,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Projet d'équipe explorant la création de contenu à l'ère de l'IA générative à travers un site bilingue consacré à une voiture électrique autonome de 1 000 miles d'autonomie."
       },
       "objective": {
-        "fr": "Évaluer les apports et limites de l'IA sur du texte, de l'image et de la vidéo dans un workflow créatif complet."
+        "fr": "Évaluer les apports et limites de l'IA sur du texte, de l'image et de la vidéo dans un processus créatif complet."
       },
       "focus": {
         "fr": [
@@ -1924,7 +1924,7 @@ window.PORTFOLIO_DATA_FR = {
       "outcomes": {
         "fr": [
           "Vision plus nuancée de l'IA générative comme outil et non comme raccourci automatique.",
-          "Expérience dans la gestion de workflows créatifs bilingues.",
+          "Expérience dans la gestion de flux de travail créatifs bilingues.",
           "Combinaison utile entre intégration web, esprit critique et production collaborative."
         ]
       },
@@ -1960,7 +1960,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": [
           "Création de projets, gestion des équipes, rôles, permissions, comptes utilisateurs et validation administrateur.",
           "Tableau de bord, alertes, calendrier et visibilité sur l'avancement global.",
-          "Delivery full stack avec HTML5, CSS3, JavaScript, Bootstrap 5, PHP 8+, MySQL ou MariaDB et Git ou GitHub."
+          "Réalisation full stack avec HTML5, CSS3, JavaScript, Bootstrap 5, PHP 8+, MySQL ou MariaDB et Git ou GitHub."
         ]
       },
       "technologies": [
@@ -2016,11 +2016,11 @@ window.PORTFOLIO_DATA_FR = {
         ]
       },
       "technologies": [
-        "Strategic analysis",
-        "Risk analysis",
+        "Analyse stratégique",
+        "Analyse de risque",
         "Outsourcing",
         "Organisation",
-        "Business environment"
+        "Environnement d'entreprise"
       ],
       "outcomes": {
         "fr": [
@@ -2050,7 +2050,7 @@ window.PORTFOLIO_DATA_FR = {
       },
       "focus": {
         "fr": [
-          "Exécution foreground et background, jobs, ps, top, pstree, fork et wait.",
+          "Exécution au premier plan et en arrière-plan, jobs, ps, top, pstree, fork et wait.",
           "Signaux avec strsignal, kill, signal et sigaction, ainsi que tubes classiques pour la communication inter-processus.",
           "Sockets client et serveur avec bind, connect, listen, accept, send, recv et tests de communication bidirectionnelle."
         ]
@@ -2392,17 +2392,17 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Modules complémentaires TECHAWAY"
       },
       "copy": {
-        "fr": "Modules suivis en complément du Bachelor autour du hardening, du Zero Trust, des firewalls, des IDS/IPS, des VPN, du contrôle d'accès, de la segmentation, de la réduction de surface d'attaque, du moindre privilège et du certificat Python Fundamentals for Data Science."
+        "fr": "Modules suivis en complément du Bachelor autour du hardening, du Zero Trust, des pare-feu, des IDS/IPS, des VPN, du contrôle d'accès, de la segmentation, de la réduction de la surface d'attaque, du moindre privilège et du certificat Python Fundamentals for Data Science."
       },
       "tags": [
         "Zero Trust",
         "Hardening",
-        "Firewalls",
+        "Pare-feu",
         "IDS/IPS",
         "VPN",
-        "Access control",
+        "Contrôle d'accès",
         "Segmentation",
-        "Least privilege",
+        "Moindre privilège",
         "Python Fundamentals for Data Science"
       ]
     },
@@ -2412,7 +2412,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "ANSSI SecNumacadémie"
       },
       "copy": {
-        "fr": "Validée avec 100 pour cent sur Panorama de la SSI, Sécurité de l'authentification, Sécurité sur Internet et Sécurité du poste de travail et nomadisme. Cela a renforcé ma culture sécurité avec une base française structurée en cybersécurité."
+        "fr": "Validée avec 100 % sur Panorama de la SSI, Sécurité de l'authentification, Sécurité sur Internet et Sécurité du poste de travail et nomadisme. Cela a renforcé ma culture sécurité avec une base française structurée en cybersécurité."
       },
       "tags": [
         "ANSSI",
@@ -2452,16 +2452,16 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "modern-snake-game"
       },
       "context": {
-        "fr": "Réinterprétation moderne de Snake conçue comme un jeu web responsive et soigné pour desktop et mobile, avec une interface contemporaine légèrement inspirée du glassmorphism, un lancement de partie explicite et un petit serveur statique Node.js pour le développement local."
+        "fr": "Réinterprétation moderne de Snake conçue comme un jeu web responsive et soigné, pensé aussi bien pour ordinateur que pour mobile, avec une interface contemporaine légèrement inspirée du glassmorphism, un lancement de partie explicite et un petit serveur statique Node.js pour le développement local."
       },
       "objective": {
         "fr": "Créer un jeu navigateur propre et maintenable, agréable aussi bien au clavier qu'au tactile, tout en séparant la logique de jeu dans des modules testables."
       },
       "focus": {
         "fr": [
-          "Interface responsive pensée pour fonctionner proprement sur desktop et mobile, avec contrôles clavier et tactiles qui restent lisibles et utilisables sur petits écrans.",
-          "Lancement de partie explicite, gestion du pause et du restart, ainsi qu'une logique de jeu séparée de l'affichage pour garder un code plus testable et maintenable.",
-          "Association d'un rendu UI moderne, d'une gestion soignée des entrées utilisateur et d'un petit serveur statique Node.js pour le développement local."
+          "Interface responsive pensée pour fonctionner proprement sur ordinateur et mobile, avec des contrôles clavier et tactiles qui restent lisibles et utilisables sur petits écrans.",
+          "Lancement de partie explicite, gestion de la pause et du redémarrage, ainsi qu'une logique de jeu séparée de l'affichage pour garder un code plus testable et maintenable.",
+          "Association d'une interface moderne, d'une gestion soignée des entrées utilisateur et d'un petit serveur statique Node.js pour le développement local."
         ]
       },
       "technologies": [
@@ -2480,7 +2480,7 @@ window.PORTFOLIO_DATA_FR = {
       "outcomes": {
         "fr": [
           "Renforcement des compétences en HTML, CSS, JavaScript et Node.js dans un projet front-end complet.",
-          "Meilleurs réflexes en responsive design, UI/UX et gestion des entrées utilisateur sur desktop comme sur mobile.",
+          "Meilleurs réflexes en responsive design, UI/UX et gestion des entrées utilisateur sur ordinateur comme sur mobile.",
           "Davantage d'aisance pour structurer un code modulaire, tester une logique applicative et garder un front-end propre dans la durée."
         ]
       },
@@ -2507,13 +2507,13 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Application web moderne et responsive pensée pour les joueurs de Clash of Clans afin de calculer rapidement les temps de fin d'amélioration ou de recherche avec différentes potions. Le site statique comprend des calculateurs dédiés aux Builder Potions, Research Potions et Pet Potions, un affichage clair des dates de fin selon l'horloge système et une interface légère pouvant fonctionner hors ligne."
       },
       "objective": {
-        "fr": "Proposer un calculateur rapide et utile, avec une sobriété inspirée d'un rendu Apple-like, tout en restant simple à utiliser sur desktop comme sur mobile."
+        "fr": "Proposer un calculateur rapide et utile, avec une sobriété inspirée de l'esthétique Apple, tout en restant simple à utiliser sur ordinateur comme sur mobile."
       },
       "focus": {
         "fr": [
           "Plusieurs calculateurs dédiés construits autour d'une saisie par durée restante et d'un affichage immédiat des dates de fin.",
           "Implémentation en HTML5, CSS3 et JavaScript avec scripts modulaires, comportement responsive et structure statique multi-pages.",
-          "Prise en charge automatique du dark et light mode selon le thème système, avec une interface légère adaptée à un usage hors ligne et à l'hébergement statique."
+          "Prise en charge automatique du mode sombre et du mode clair selon le thème système, avec une interface légère adaptée à un usage hors ligne et à l'hébergement statique."
         ]
       },
       "technologies": [
@@ -2532,7 +2532,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": [
           "Renforcement des réflexes en développement front-end et de la logique de calcul en JavaScript.",
           "Davantage d'expérience dans les choix UX/UI pour des outils web utiles et légers au quotidien.",
-          "Meilleure pratique de livraison d'une application statique responsive, sobre, lisible et simple à héberger."
+          "Meilleure pratique de réalisation d'une application statique responsive, sobre, lisible et simple à héberger."
         ]
       },
       "links": [
@@ -2555,7 +2555,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Compteur"
       },
       "context": {
-        "fr": "Site simple et responsive permettant d'augmenter ou de diminuer une valeur à l'aide de boutons et d'incréments prédéfinis, avec une interface pensée pour rester fluide et lisible sur desktop comme sur mobile, y compris sur des appareils avec encoche comme l'iPhone."
+        "fr": "Site simple et responsive permettant d'augmenter ou de diminuer une valeur à l'aide de boutons et d'incréments prédéfinis, avec une interface pensée pour rester fluide et lisible sur ordinateur comme sur mobile, y compris sur des appareils avec encoche comme l'iPhone."
       },
       "objective": {
         "fr": "Construire une interface web légère qui reste claire, accessible et adaptative dans les contextes d'usage les plus courants."
@@ -2563,7 +2563,7 @@ window.PORTFOLIO_DATA_FR = {
       "focus": {
         "fr": [
           "Actions d'incrémentation et de décrémentation combinées à des pas prédéfinis dans une logique d'interaction simple côté client.",
-          "Travail responsive pour conserver une interface lisible sur desktop, mobile et appareils avec zones de sécurité contraintes.",
+          "Travail responsive pour conserver une interface lisible sur ordinateur, mobile et appareils avec zones de sécurité contraintes.",
           "Implémentation front-end volontairement directe, orientée vers l'usage, la lisibilité et la fluidité plutôt que la surcharge visuelle."
         ]
       },
@@ -2663,7 +2663,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": [
           "Configuration interactive de la période d'investissement, de la fréquence, du montant, des frais et d'intervalles d'analyse personnalisés.",
           "Calcul automatique du montant investi, de la valeur du portefeuille, du profit ou de la perte, du ROI, du multiple, du TRI annualisé (XIRR) et du drawdown maximum.",
-          "Génération de graphiques et de fichiers CSV ou JSON pour soutenir des workflows d'analyse, de comparaison et de simulation plus poussés."
+          "Génération de graphiques et de fichiers CSV ou JSON pour soutenir des flux de travail d'analyse, de comparaison et de simulation plus poussés."
         ]
       },
       "technologies": [
@@ -2708,7 +2708,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Utilitaire Bash minimaliste conçu pour découper rapidement des vidéos sans ré-encodage à l'aide de FFmpeg, afin de conserver la qualité originale et les métadonnées temporelles. L'outil prend en charge une saisie manuelle des segments ou via fichier texte, plusieurs formats de timecodes, l'exécution parallèle sur plusieurs cœurs CPU, la génération automatique des extraits dans un dossier dédié et la compatibilité macOS, Linux et WSL."
       },
       "objective": {
-        "fr": "Accélérer des workflows récurrents de découpe vidéo avec un outil CLI simple à utiliser tout en couvrant des besoins réalistes de production."
+        "fr": "Accélérer des flux de travail récurrents de découpe vidéo avec un outil CLI simple à utiliser tout en couvrant des besoins réalistes de production."
       },
       "focus": {
         "fr": [
@@ -2731,7 +2731,7 @@ window.PORTFOLIO_DATA_FR = {
       "outcomes": {
         "fr": [
           "Renforcement des compétences en Bash et FFmpeg sur un outil pensé pour un usage réel au quotidien.",
-          "Meilleurs réflexes d'automatisation en ligne de commande pour le traitement multimédia et l'optimisation de workflow.",
+          "Meilleurs réflexes d'automatisation en ligne de commande pour le traitement multimédia et l'optimisation des flux de travail.",
           "Davantage d'aisance pour créer des utilitaires CLI pratiques qui équilibrent simplicité, robustesse et performance."
         ]
       },
@@ -2755,16 +2755,16 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "Repo Structure Copier"
       },
       "context": {
-        "fr": "Fork maintenu et repackagé d'une extension Visual Studio Code destiné à copier la structure complète d'un dépôt avec le contenu des fichiers vers le presse-papiers, en respectant des règles d'exclusion de type .repoignore et en affichant un compteur de tokens utile dans des workflows orientés LLM."
+        "fr": "Fork maintenu et repackagé d'une extension Visual Studio Code destiné à copier la structure complète d'un dépôt avec le contenu des fichiers vers le presse-papiers, en respectant des règles d'exclusion de type .repoignore et en affichant un compteur de tokens utile dans des flux de travail orientés LLM."
       },
       "objective": {
-        "fr": "Adapter et packager un outil de développement existant pour qu'il s'intègre mieux à des workflows de développement orientés IA tout en restant simple à installer et à utiliser."
+        "fr": "Adapter et packager un outil de développement existant pour qu'il s'intègre mieux à des flux de travail de développement orientés IA tout en restant simple à installer et à utiliser."
       },
       "focus": {
         "fr": [
-          "Travail de fork, d'adaptation et de packaging plutôt qu'un développement from scratch, avec attention portée aux besoins concrets des workflows de copie de dépôt vers le presse-papiers.",
+          "Travail de fork, d'adaptation et de packaging plutôt qu'un développement réalisé de zéro, avec une attention portée aux besoins concrets des flux de copie de dépôt vers le presse-papiers.",
           "Usage de JavaScript ou TypeScript dans l'environnement VS Code Extension avec outillage npm et packaging via vsce.",
-          "Amélioration d'un outil open source de développeur grâce aux règles d'exclusion, à la visibilité sur les tokens et à la personnalisation de workflows pour l'usage avec des LLM."
+          "Amélioration d'un outil open source de développeur grâce aux règles d'exclusion, à la visibilité sur les tokens et à la personnalisation de flux de travail pour l'usage avec des LLM."
         ]
       },
       "technologies": [
@@ -2774,15 +2774,15 @@ window.PORTFOLIO_DATA_FR = {
         "npm",
         "vsce",
         ".repoignore",
-        "Clipboard workflows",
+        "Flux de copie vers le presse-papiers",
         "Token counting",
-        "LLM workflows"
+        "Flux de travail LLM"
       ],
       "outcomes": {
         "fr": [
           "Renforcement des compétences en JavaScript ou TypeScript dans l'écosystème des extensions VS Code.",
           "Meilleure familiarité avec npm, le packaging, la maintenance open source et la livraison d'extensions.",
-          "Davantage d'expérience dans la personnalisation d'outils existants pour améliorer des workflows de développement réellement influencés par l'usage de l'IA."
+          "Davantage d'expérience dans la personnalisation d'outils existants pour améliorer des flux de travail de développement réellement influencés par l'usage de l'IA."
         ]
       },
       "links": [
@@ -2831,7 +2831,7 @@ window.PORTFOLIO_DATA_FR = {
       ],
       "outcomes": {
         "fr": [
-          "Renforcement des compétences en Bash, rsync et automatisation système sur un workflow de transfert concret.",
+          "Renforcement des compétences en Bash, rsync et automatisation système sur un flux de transfert concret.",
           "Meilleure gestion des chemins distants, de la robustesse des scripts et des enjeux de fiabilité opérationnelle.",
           "Davantage d'aisance pour améliorer des tâches d'administration et de sauvegarde grâce à de petits outils shell réellement utiles."
         ]
@@ -2856,10 +2856,10 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "svg-to-png"
       },
       "context": {
-        "fr": "Outil shell créé pour automatiser la conversion d'assets SVG en fichiers PNG exploitables, avec prise en charge d'options de hauteur et de largeur, conservation du ratio et réglage optionnel du DPI via ImageMagick. Le workflow est conçu pour un usage simple en ligne de commande sur macOS et repose sur rsvg-convert et convert."
+        "fr": "Outil shell créé pour automatiser la conversion d'assets SVG en fichiers PNG exploitables, avec prise en charge d'options de hauteur et de largeur, conservation du ratio et réglage optionnel du DPI via ImageMagick. Le flux de travail est conçu pour un usage simple en ligne de commande sur macOS et repose sur rsvg-convert et convert."
       },
       "objective": {
-        "fr": "Automatiser un petit workflow fréquent de traitement d'images au moyen d'un outil en ligne de commande direct et réutilisable."
+        "fr": "Automatiser un petit flux de travail fréquent de traitement d'images au moyen d'un outil en ligne de commande direct et réutilisable."
       },
       "focus": {
         "fr": [
@@ -2881,7 +2881,7 @@ window.PORTFOLIO_DATA_FR = {
       "outcomes": {
         "fr": [
           "Renforcement des réflexes de shell scripting sur un cas d'usage ciblé de traitement d'images.",
-          "Meilleure familiarité avec l'automatisation CLI appliquée aux workflows d'assets graphiques.",
+          "Meilleure familiarité avec l'automatisation CLI appliquée aux flux de travail liés aux assets graphiques.",
           "Davantage d'aisance pour gérer des arguments et concevoir de petits outils techniques qui font gagner du temps au quotidien."
         ]
       },
@@ -2905,7 +2905,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": "GitSmartSplitter"
       },
       "context": {
-        "fr": "Application macOS native construite en Swift et SwiftUI pour découper de grands blocs de texte en segments exploitables pour GitHub, la documentation ou les plateformes de messagerie. L'application peut segmenter un contenu selon une limite de caractères ou un nombre de parties, ajouter des en-têtes contextuels, copier chaque partie en un clic, utiliser des prompts LLM optionnels, vérifier les mises à jour et proposer une interface multilingue en anglais, français et allemand avec tests unitaires et UI."
+        "fr": "Application macOS native construite en Swift et SwiftUI pour découper de grands blocs de texte en segments exploitables pour GitHub, la documentation ou les plateformes de messagerie. L'application peut segmenter un contenu selon une limite de caractères ou un nombre de parties, ajouter des en-têtes contextuels, copier chaque partie en un clic, utiliser des prompts LLM optionnels, vérifier les mises à jour et proposer une interface multilingue en anglais, français et allemand avec tests unitaires et tests UI."
       },
       "objective": {
         "fr": "Fournir un outil de productivité concret avec une ergonomie macOS native pour manipuler proprement et efficacement de grands blocs de texte."
@@ -2913,8 +2913,8 @@ window.PORTFOLIO_DATA_FR = {
       "focus": {
         "fr": [
           "Logique de découpage de texte fondée soit sur une limite de caractères, soit sur un nombre cible de segments, avec en-têtes contextuels optionnels.",
-          "Actions de copie en un clic, prompts optionnels pour les workflows LLM et capacité de vérification des mises à jour.",
-          "Interface native multilingue en anglais, français et allemand, soutenue par des tests unitaires et des tests UI."
+          "Actions de copie en un clic, consignes LLM optionnelles pour les flux de travail et capacité de vérification des mises à jour.",
+          "Interface native multilingue en anglais, français et allemand, soutenue par des tests unitaires et des tests d'interface."
         ]
       },
       "technologies": [
@@ -2930,7 +2930,7 @@ window.PORTFOLIO_DATA_FR = {
       "outcomes": {
         "fr": [
           "Renforcement des compétences en Swift et SwiftUI sur un outil de productivité Apple natif.",
-          "Meilleurs réflexes en UX macOS, en logique de découpage de texte et en workflow de localisation.",
+          "Meilleurs réflexes en UX macOS, en logique de découpage de texte et en localisation.",
           "Davantage d'expérience dans la création d'un utilitaire concret avec tests, gestion des mises à jour et support multilingue."
         ]
       },
@@ -2963,7 +2963,7 @@ window.PORTFOLIO_DATA_FR = {
         "fr": [
           "Interactions de compteur avec incrémentation, décrémentation et pas personnalisables via une interface claire et directe.",
           "Usage d'animations et d'arrière-plans dégradés pour donner davantage de personnalité à l'application tout en restant simple.",
-          "Travail d'adaptation de l'interface sur un large éventail d'appareils Apple, de l'iPhone et l'iPad aux contextes watchOS, tvOS et Vision Pro."
+          "Travail d'adaptation de l'interface sur un large éventail d'appareils Apple, de l'iPhone et de l'iPad aux contextes watchOS, tvOS et Vision Pro."
         ]
       },
       "technologies": [
@@ -3062,7 +3062,7 @@ window.PORTFOLIO_DATA_FR = {
       "fr": "Vous préférez un contact direct ?"
     },
     "ctaCopy": {
-      "fr": "L'email reste le moyen le plus simple pour échanger rapidement, ou bien utilisez les plateformes ci-dessous pour voir mes dépôts, exercices, pratiques TryHackMe et mon parcours professionnel."
+      "fr": "L'email reste le moyen le plus simple pour échanger rapidement, ou bien utilisez les plateformes ci-dessous pour voir mes dépôts, mes exercices, ma pratique sur TryHackMe et mon parcours professionnel."
     },
     "primaryCta": {
       "fr": "M'écrire"
