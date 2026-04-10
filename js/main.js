@@ -55,6 +55,7 @@
     burpsuite: "burpsuite",
     c: "c",
     censys: "censys",
+    cve: "cve",
     chatgpt: "openai",
     cisco: "cisco",
     ciscoasa: "cisco",
