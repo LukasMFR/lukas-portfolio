@@ -95,6 +95,7 @@
     kapwing: "kapwing",
     kalilinux: "kalilinux",
     keycloak: "keycloak",
+    kerberos: "kerberos",
     leaflet: "leaflet",
     linux: "linux",
     lynis: "lynis",
