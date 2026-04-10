@@ -56,6 +56,7 @@
     c: "c",
     censys: "censys",
     cve: "cve",
+    cvss: "cvss",
     chatgpt: "openai",
     cisco: "cisco",
     ciscoasa: "cisco",
