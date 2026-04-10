@@ -34,36 +34,115 @@
   const SUPPORTED_LANGUAGES = new Set(["en", "fr"]);
   const HEADER_MENU_BREAKPOINT = 1100;
   const TECH_LOGO_ALIASES = {
+    activedirectory: "windows11",
+    apple: "apple",
+    appletv: "apple",
+    applevisionpro: "apple",
+    applewatch: "apple",
     ansible: "ansible",
     apache: "apache",
+    bash: "bash",
+    beautifulsoup: "python",
     bootstrap5: "bootstrap",
+    bitlocker: "windows11",
+    burpsuite: "burpsuite",
     c: "c",
+    censys: "censys",
+    chatgpt: "openai",
+    cisco: "cisco",
+    ciscoasa: "cisco",
+    ciscocli: "cisco",
+    ciscoios: "cisco",
     cplusplus: "cplusplus",
     css: "css3",
     css3: "css3",
     debian12: "debian",
     docker: "docker",
+    ffmpeg: "ffmpeg",
     firebase: "firebase",
+    firefox: "firefox",
+    firefoxdevtools: "firefox",
     flask: "flask",
+    gns3: "gns3",
     grafana: "grafana",
+    git: "git",
+    github: "github",
     html: "html5",
     html5: "html5",
+    ipad: "apple",
+    iphone: "apple",
     java: "java",
     javascript: "javascript",
     jira: "jira",
+    jsonwebtokens: "jsonwebtokens",
+    jwt: "jsonwebtokens",
+    kalilinux: "kalilinux",
+    keycloak: "keycloak",
+    leaflet: "leaflet",
+    linux: "linux",
+    mac: "apple",
+    macos: "apple",
     mariadb: "mariadb",
+    matplotlib: "matplotlib",
+    metasploit: "metasploit",
     mysql: "mysql",
+    mysqlworkbench: "mysql",
+    nmap: "nmap",
+    nominatim: "openstreetmap",
+    nodedotjs: "nodejs",
+    nodejs: "nodejs",
+    npm: "nodejs",
+    openai: "openai",
+    openid: "openid",
+    openidconnect: "openid",
+    oidc: "openid",
+    openldap: "openldap",
+    openssh: "openssh",
+    openssl: "openssl",
+    openstreetmap: "openstreetmap",
+    openweather: "openweather",
+    openweathermap: "openweather",
     pandas: "pandas",
     php: "php",
     php8: "php",
     powershell: "powershell",
+    prometheus: "prometheus",
+    promql: "prometheus",
     proxmox: "proxmox",
     python: "python",
+    rapid: "rapidapi",
+    rapidapi: "rapidapi",
+    requests: "requests",
+    seaborn: "seaborn",
     selenium: "selenium",
+    shell: "bash",
+    sora: "openai",
+    sql: "sql",
+    ssh: "openssh",
+    swift: "swift",
+    swiftui: "swift",
     terraform: "terraform",
+    typescript: "typescript",
     ubuntu: "ubuntu",
+    unsplash: "unsplash",
+    visualstudiocode: "vscode",
+    vscode: "vscode",
+    vscodeextension: "vscode",
+    vsce: "vscode",
+    wappalyzer: "wappalyzer",
+    wireshark: "wireshark",
     windows11: "windows11",
     windowsserver: "windows11",
+    wsl: "windows11",
+    xampp: "xampp",
+    yelp: "yelp",
+    zabbix: "zabbix",
+    packettracer: "cisco",
+    networkdefense: "cisco",
+    cyberthreatmanagement: "cisco",
+    endpointsecurity: "cisco",
+    juniorcybersecurityanalyst: "cisco",
+    pythonfundamentalsfordatascience: "python",
   };
 
   function translate(value, language = state.language) {
@@ -571,7 +650,7 @@
 
         <p class="project-copy">${translate(project.overview)}</p>
         <ul class="project-list">${highlights}</ul>
-        ${pillList(project.technologies, "tech-list", "tech-pill")}
+        ${pillList(project.technologies, "tech-list", "tech-pill", { withTechLogos: true })}
         <ul class="project-list">${outcomes}</ul>
         <div class="project-links">
           ${project.links.map((link) => buttonMarkup(link, "button-ghost")).join("")}
@@ -622,7 +701,7 @@
           </div>
           <div class="detail-block">
             <h4 class="detail-title">${translate(data.projects.techLabel)}</h4>
-            ${pillList(item.technologies, "tech-list", "tech-pill")}
+            ${pillList(item.technologies, "tech-list", "tech-pill", { withTechLogos: true })}
           </div>
           ${links}
         </div>
@@ -648,7 +727,7 @@
           </div>
         </div>
         <p class="skill-copy">${translate(item.copy)}</p>
-        ${pillList(item.tags, "tech-list", "tech-pill")}
+        ${pillList(item.tags, "tech-list", "tech-pill", { withTechLogos: true })}
       </article>
     `;
   }
