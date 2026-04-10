@@ -163,6 +163,7 @@
     vsce: "vscode",
     wappalyzer: "wappalyzer",
     whatweb: "whatweb",
+    weevely: "weevely",
     wireshark: "wireshark",
     windows11: "windows11",
     windowsserver: "windows11",
