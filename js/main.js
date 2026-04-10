@@ -42,7 +42,9 @@
     ansible: "ansible",
     apache: "apache",
     bash: "bash",
-    beautifulsoup: "python",
+    bs4: "beautifulsoup",
+    beautifulsoup: "beautifulsoup",
+    beautifulsoup4: "beautifulsoup",
     bootstrap5: "bootstrap",
     bitlocker: "windows11",
     burpsuite: "burpsuite",
@@ -58,15 +60,19 @@
     css3: "css3",
     debian12: "debian",
     docker: "docker",
+    csv: "csv",
+    excel: "excel",
     ffmpeg: "ffmpeg",
     firebase: "firebase",
     firefox: "firefox",
     firefoxdevtools: "firefox",
     flask: "flask",
+    gantt: "gantt",
     gns3: "gns3",
     grafana: "grafana",
     git: "git",
     github: "github",
+    hydra: "hydra",
     html: "html5",
     html5: "html5",
     ipad: "apple",
@@ -74,6 +80,7 @@
     java: "java",
     javascript: "javascript",
     jira: "jira",
+    json: "json",
     jsonwebtokens: "jsonwebtokens",
     jwt: "jsonwebtokens",
     kalilinux: "kalilinux",
@@ -100,6 +107,7 @@
     openssh: "openssh",
     openssl: "openssl",
     openstreetmap: "openstreetmap",
+    openvpn: "openvpn",
     openweather: "openweather",
     openweathermap: "openweather",
     pandas: "pandas",
@@ -116,6 +124,7 @@
     seaborn: "seaborn",
     selenium: "selenium",
     shell: "bash",
+    shodan: "shodan",
     sora: "openai",
     sql: "sql",
     ssh: "openssh",
@@ -177,6 +186,8 @@
       .toLowerCase()
       .normalize("NFKD")
       .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\+\+/g, "plusplus")
+      .replace(/#/g, "sharp")
       .replace(/[^a-z0-9]+/g, "");
   }
 
