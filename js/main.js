@@ -142,6 +142,7 @@
     rapid: "rapidapi",
     rapidapi: "rapidapi",
     requests: "requests",
+    rsync: "rsync",
     seaborn: "seaborn",
     selenium: "selenium",
     shell: "bash",
