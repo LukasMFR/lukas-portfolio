@@ -64,7 +64,7 @@ window.PORTFOLIO_DATA_EN = {
   },
   "person": {
     "name": "Lukas MAUFFRÉ",
-    "email": "lukasmauffre@icloud.com",
+    "email": "lukas.contact@icloud.com",
     "location": {
       "en": "Paris, France"
     },
@@ -3074,9 +3074,9 @@ window.PORTFOLIO_DATA_EN = {
       {
         "icon": "mail",
         "title": "Email",
-        "href": "mailto:lukasmauffre@icloud.com",
+        "href": "mailto:lukas.contact@icloud.com",
         "copy": {
-          "en": "lukasmauffre@icloud.com"
+          "en": "lukas.contact@icloud.com"
         }
       },
       {
