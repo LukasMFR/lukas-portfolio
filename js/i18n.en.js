@@ -1,13 +1,13 @@
 window.PORTFOLIO_DATA_EN = {
   "meta": {
     "title": {
-      "en": "Lukas Mauffre | Cybersecurity, Systems & Infrastructure Portfolio"
+      "en": "Lukas Mauffre | Cybersecurity, Systems & Web Engineering"
     },
     "description": {
-      "en": "Personal portfolio of Lukas Mauffre, focused on cybersecurity, systems, networks, infrastructure, IAM, development and governance."
+      "en": "Portfolio of Lukas Mauffre, focused on cybersecurity, systems, networks, infrastructure, IAM and web engineering. Bilingual, designed and hand-coded from scratch."
     },
     "ogTitle": {
-      "en": "Lukas Mauffre | Cybersecurity, Systems & Infrastructure Portfolio"
+      "en": "Lukas Mauffre | Cybersecurity, Systems & Web Engineering"
     },
     "ogDescription": {
       "en": "One-page bilingual portfolio covering cybersecurity, systems, networks, infrastructure, IAM, development and governance."
@@ -126,8 +126,11 @@ window.PORTFOLIO_DATA_EN = {
     "subtitle": {
       "en": "Bachelor student building secure, reliable and understandable digital systems."
     },
+    "availability": {
+      "en": "Open to freelance web work and 2026 opportunities"
+    },
     "description": {
-      "en": "I am a cybersecurity-oriented student focused on systems, networks, infrastructure, identity and access management, development and governance. My work connects hands-on labs, secure administration, offensive and defensive security, and the ability to explain complex topics clearly in both technical and organisational contexts."
+      "en": "I secure systems, networks and identity infrastructure, and I build fast, accessible web experiences like this one."
     },
     "roles": [
       {
@@ -3115,7 +3118,7 @@ window.PORTFOLIO_DATA_EN = {
   },
   "footer": {
     "copy": {
-      "en": "Cybersecurity-oriented portfolio built as a static one-page site for GitHub Pages."
+      "en": "Cybersecurity, systems and web engineering. This site was designed and hand-coded from scratch, in two languages."
     },
     "rights": {
       "en": "All rights reserved."

@@ -1,13 +1,13 @@
 window.PORTFOLIO_DATA_FR = {
   "meta": {
     "title": {
-      "fr": "Lukas Mauffré | Portfolio cybersécurité, systèmes et infrastructure"
+      "fr": "Lukas Mauffré | Cybersécurité, systèmes et ingénierie web"
     },
     "description": {
-      "fr": "Portfolio personnel de Lukas Mauffré, orienté cybersécurité, systèmes, réseaux, infrastructure, IAM, développement et gouvernance."
+      "fr": "Portfolio de Lukas Mauffré, orienté cybersécurité, systèmes, réseaux, infrastructure, IAM et ingénierie web. Bilingue, conçu et codé à la main."
     },
     "ogTitle": {
-      "fr": "Lukas Mauffré | Portfolio cybersécurité, systèmes et infrastructure"
+      "fr": "Lukas Mauffré | Cybersécurité, systèmes et ingénierie web"
     },
     "ogDescription": {
       "fr": "Portfolio bilingue en une page couvrant cybersécurité, systèmes, réseaux, infrastructure, IAM, développement et gouvernance."
@@ -126,8 +126,11 @@ window.PORTFOLIO_DATA_FR = {
     "subtitle": {
       "fr": "Étudiant en Bachelor, je construis des systèmes numériques sûrs, fiables et compréhensibles."
     },
+    "availability": {
+      "fr": "Ouvert aux projets web en freelance et aux opportunités 2026"
+    },
     "description": {
-      "fr": "Je suis un étudiant orienté cybersécurité, avec un fort intérêt pour les systèmes, les réseaux, l’infrastructure, la gestion des identités et des accès, le développement et la gouvernance. Mon travail relie la pratique en laboratoire, l’administration sécurisée, la sécurité offensive et défensive, ainsi que la capacité à expliquer clairement des sujets complexes dans des contextes techniques et organisationnels."
+      "fr": "Je sécurise systèmes, réseaux et infrastructures d’identité, et je conçois des expériences web rapides et accessibles, comme celle que vous lisez."
     },
     "roles": [
       {
@@ -3115,7 +3118,7 @@ window.PORTFOLIO_DATA_FR = {
   },
   "footer": {
     "copy": {
-      "fr": "Portfolio orienté cybersécurité conçu comme un site statique en une page pour GitHub Pages."
+      "fr": "Cybersécurité, systèmes et ingénierie web. Ce site a été conçu et codé entièrement à la main, en deux langues."
     },
     "rights": {
       "fr": "Tous droits réservés."
