@@ -2543,7 +2543,7 @@ window.PORTFOLIO_DATA_FR = {
           "label": {
             "fr": "GitHub"
           },
-          "href": "https://github.com/LukasMFR/repo-structure-copier",
+          "href": "https://github.com/LukasMFR/clash-potion-calculator",
           "icon": "github"
         }
       ]
