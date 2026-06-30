@@ -14,9 +14,13 @@
     />
     <meta name="author" content="Lukas Mauffre" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0a0e13" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://lukasmfr.github.io/lukas-portfolio/" />
+
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lukas Mauffre" />
+    <meta property="og:url" content="https://lukasmfr.github.io/lukas-portfolio/" />
     <meta
       property="og:title"
       content="Lukas Mauffre | Cybersecurity, Systems & Infrastructure Portfolio"
@@ -25,8 +29,27 @@
       property="og:description"
       content="One-page bilingual portfolio covering cybersecurity, systems, networks, infrastructure, IAM, development and governance."
     />
-    <meta property="og:image" content="assets/images/profile/profile-photo.webp" />
+    <meta
+      property="og:image"
+      content="https://lukasmfr.github.io/lukas-portfolio/assets/images/profile/profile-photo.webp"
+    />
+    <meta property="og:image:alt" content="Portrait of Lukas Mauffre" />
     <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Lukas Mauffre | Cybersecurity, Systems & Infrastructure Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="One-page bilingual portfolio covering cybersecurity, systems, networks, infrastructure, IAM, development and governance."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lukasmfr.github.io/lukas-portfolio/assets/images/profile/profile-photo.webp"
+    />
+
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 
     <link
@@ -44,6 +67,43 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lukas Mauffré",
+        "url": "https://lukasmfr.github.io/lukas-portfolio/",
+        "image": "https://lukasmfr.github.io/lukas-portfolio/assets/images/profile/profile-photo.webp",
+        "jobTitle": "Cybersecurity, systems and infrastructure student",
+        "description": "Cybersecurity-oriented student focused on systems, networks, infrastructure, identity and access management, development and governance.",
+        "knowsAbout": [
+          "Cybersecurity",
+          "Systems administration",
+          "Networking",
+          "Infrastructure",
+          "Identity and Access Management",
+          "Governance, Risk and Compliance",
+          "Penetration testing",
+          "Active Directory"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "ECE Paris"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Paris",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://github.com/LukasMFR",
+          "https://www.linkedin.com/in/lukas-mauffré-63abb8239",
+          "https://x.com/Lukas_Mauffre",
+          "https://tryhackme.com/p/lukas.mauffre"
+        ]
+      }
+    </script>
 
     <script>
       // Apply the persisted theme before first paint to avoid a flash of the wrong theme.
@@ -66,6 +126,8 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
     <div class="site-backdrop" aria-hidden="true">
       <div class="backdrop-glow backdrop-glow-one"></div>
       <div class="backdrop-glow backdrop-glow-two"></div>
@@ -75,11 +137,11 @@
     <header class="site-header" id="site-header"></header>
 
     <main id="main-content">
-      <section id="home" class="hero-section"></section>
-      <section id="about" class="section reveal"></section>
-      <section id="skills" class="section reveal"></section>
-      <section id="projects" class="section reveal"></section>
-      <section id="contact" class="section reveal"></section>
+      <section id="home" class="hero-section" aria-labelledby="hero-name"></section>
+      <section id="about" class="section reveal" aria-labelledby="about-title"></section>
+      <section id="skills" class="section reveal" aria-labelledby="skills-title"></section>
+      <section id="projects" class="section reveal" aria-labelledby="projects-title"></section>
+      <section id="contact" class="section reveal" aria-labelledby="contact-title"></section>
     </main>
 
     <footer class="site-footer" id="site-footer"></footer>

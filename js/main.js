@@ -316,8 +316,8 @@
           </span>
         </a>
 
-        <nav class="nav-links" aria-label="${ui("mainNav")}">
-          <ul style="display:flex;align-items:center;gap:.15rem">${navLinks}</ul>
+        <nav class="site-nav" aria-label="${ui("mainNav")}">
+          <ul class="nav-links">${navLinks}</ul>
         </nav>
 
         <div class="nav-actions">
@@ -362,11 +362,12 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="hero-name-label">${escapeHtml(translate(data.navigation.brandSubtitle))}</span>
-            <h1 class="hero-title">${escapeHtml(data.person.name)}</h1>
-            <div class="hero-role" aria-live="polite">
+            <h1 class="hero-title" id="hero-name">${escapeHtml(data.person.name)}</h1>
+            <p class="hero-role" aria-hidden="true">
               ${icon("shield", { variant: "accent" })}
-              <span class="tw" id="tw-target"></span><span class="hero-cursor" aria-hidden="true"></span>
-            </div>
+              <span class="tw" id="tw-target"></span><span class="hero-cursor"></span>
+            </p>
+            <p class="sr-only">${escapeHtml(translate(data.hero.roles[0]))}.</p>
             <p class="hero-subtitle">${escapeHtml(translate(data.hero.subtitle))}</p>
             <div class="hero-actions">
               ${btn("#projects", data.hero.primaryCta, { variant: "primary", icon: "arrow-up-right" })}
@@ -404,7 +405,7 @@
         <div class="tl-head">
           ${logoBox(item.image, "tl-logo")}
           <div>
-            <div class="tl-role">${escapeHtml(translate(item.role))}</div>
+            <h4 class="tl-role">${escapeHtml(translate(item.role))}</h4>
             <div class="tl-meta">
               <span class="period">${escapeHtml(translate(item.period))}</span>
               <span>${escapeHtml(translate(item.organisation))}</span>
@@ -429,7 +430,7 @@
       <div class="container">
         <div class="section-head reveal-item">
           <span class="section-eyebrow">${escapeHtml(translate(data.about.kicker))}</span>
-          <h2 class="section-title">${escapeHtml(translate(data.about.title))}</h2>
+          <h2 class="section-title" id="about-title">${escapeHtml(translate(data.about.title))}</h2>
         </div>
 
         <div class="about-top">
@@ -479,7 +480,7 @@
     elements.skills.innerHTML = `
       <div class="container">
         <div class="section-head reveal-item">
-          <h2 class="section-title">${escapeHtml(translate(data.skills.title))}</h2>
+          <h2 class="section-title" id="skills-title">${escapeHtml(translate(data.skills.title))}</h2>
           <p class="section-intro">${escapeHtml(translate(data.skills.intro))}</p>
         </div>
 
@@ -514,7 +515,7 @@
           ${techMarks(project.technologies, isHero ? 7 : 5)}
         </div>
         <div class="proj-headings">
-          <h3 class="proj-title">${escapeHtml(translate(project.title))}</h3>
+          <h4 class="proj-title">${escapeHtml(translate(project.title))}</h4>
           <span class="proj-subtitle">${escapeHtml(translate(project.subtitle))}</span>
         </div>
       </div>
@@ -553,7 +554,7 @@
   function renderCert(item) {
     return `<article class="cert card card-hover reveal-item">
       <span class="tile-ico">${icon(item.icon, { variant: "accent" })}</span>
-      <h3 class="cert-title">${escapeHtml(translate(item.title))}</h3>
+      <h4 class="cert-title">${escapeHtml(translate(item.title))}</h4>
       <p class="skill-copy">${escapeHtml(translate(item.copy))}</p>
       ${chips(item.tags, { withLogos: true })}
     </article>`;
@@ -591,7 +592,7 @@
     elements.projects.innerHTML = `
       <div class="container">
         <div class="section-head reveal-item">
-          <h2 class="section-title">${escapeHtml(translate(data.projects.title))}</h2>
+          <h2 class="section-title" id="projects-title">${escapeHtml(translate(data.projects.title))}</h2>
           <p class="section-intro">${escapeHtml(translate(data.projects.intro))}</p>
         </div>
 
@@ -655,7 +656,7 @@
     elements.contact.innerHTML = `
       <div class="container">
         <div class="section-head reveal-item">
-          <h2 class="section-title">${escapeHtml(translate(data.contact.title))}</h2>
+          <h2 class="section-title" id="contact-title">${escapeHtml(translate(data.contact.title))}</h2>
           <p class="section-intro">${escapeHtml(translate(data.contact.intro))}</p>
         </div>
 
@@ -723,6 +724,8 @@
     set('meta[property="og:title"]', "content", translate(data.meta.ogTitle));
     set('meta[property="og:description"]', "content", translate(data.meta.ogDescription));
     set('meta[property="og:locale"]', "content", translate(data.meta.locale));
+    set('meta[name="twitter:title"]', "content", translate(data.meta.ogTitle));
+    set('meta[name="twitter:description"]', "content", translate(data.meta.ogDescription));
     document.documentElement.lang = state.language;
     if (elements.skipLink) elements.skipLink.textContent = ui("skip");
   }
@@ -742,6 +745,8 @@
     setupSpotlights();
     startTypewriter();
     applyActiveNav();
+    updateHeaderScrolled();
+    updateScrollProgress();
   }
 
   /* ---------- menu ---------- */
@@ -758,6 +763,12 @@
       menu.setAttribute("aria-hidden", state.menuOpen ? "false" : "true");
     }
     document.body.style.overflow = state.menuOpen ? "hidden" : "";
+    if (state.menuOpen) {
+      const first = menu && menu.querySelector(".mobile-link");
+      if (first) window.requestAnimationFrame(() => first.focus());
+    } else if (toggle) {
+      toggle.focus();
+    }
   }
   function closeMenu() {
     if (state.menuOpen) setMenuOpen(false);
@@ -789,11 +800,20 @@
     if (!elements.header) return;
     elements.header.classList.toggle("is-scrolled", window.scrollY > 16);
   }
+  function updateScrollProgress() {
+    const bar = document.querySelector(".scroll-progress span");
+    if (!bar) return;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    bar.style.transform = `scaleX(${progress})`;
+  }
   function onScroll() {
     if (state.scrollTicking) return;
     state.scrollTicking = true;
     window.requestAnimationFrame(() => {
       updateHeaderScrolled();
+      updateScrollProgress();
       state.scrollTicking = false;
     });
   }

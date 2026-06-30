@@ -84,8 +84,8 @@
   --surface-3: #eef1f6;
   --surface-inset: #f1f4f8;
   --text: #0d1626;
-  --text-2: #44546b;
-  --text-soft: #6a7890;
+  --text-2: #41506a;
+  --text-soft: #59667d;
   --border: rgba(13, 22, 38, 0.1);
   --border-strong: rgba(13, 22, 38, 0.16);
   --logo-surface: #ffffff;
@@ -331,6 +331,35 @@ p {
 }
 .skip-link:focus {
   top: calc(1rem + var(--safe-top));
+}
+
+/* ---------- Scroll progress ---------- */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 1100;
+  pointer-events: none;
+  background: transparent;
+}
+.scroll-progress span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  will-change: transform;
+}
+
+/* ---------- Reduced transparency fallback ---------- */
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .mobile-menu {
+    background: var(--surface);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 }
 
 /* ---------- Ambient backdrop + grain ---------- */
@@ -1713,8 +1742,10 @@ p {
   border-radius: var(--r-lg);
   background: var(--surface);
   box-shadow: var(--shadow-sm);
-  overflow: hidden;
   transition: border-color var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease);
+}
+.disc > summary {
+  border-radius: var(--r-lg);
 }
 .disc[open] {
   border-color: var(--accent-line);
@@ -1927,9 +1958,7 @@ p {
 .contact-link .cl-copy {
   font-size: 0.86rem;
   color: var(--text-soft);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 .contact-link .trail {
   width: 1rem;
@@ -2059,7 +2088,7 @@ p {
 }
 
 @media (max-width: 920px) {
-  .nav-links,
+  .site-nav,
   .header-cv,
   .seg-lang.desktop-only,
   .desktop-only {
