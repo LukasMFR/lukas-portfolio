@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme-pref="system">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -14,6 +14,8 @@
     />
     <meta name="author" content="Lukas Mauffre" />
     <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0e13" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -26,21 +28,54 @@
     <meta property="og:image" content="assets/images/profile/profile-photo.webp" />
     <meta property="og:locale" content="en_US" />
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+    <link
+      rel="preload"
+      href="assets/fonts/space-grotesk-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/geist-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script>
+      // Apply the persisted theme before first paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var stored = localStorage.getItem("lm-theme");
+          var root = document.documentElement;
+          if (stored === "light" || stored === "dark") {
+            root.setAttribute("data-theme", stored);
+            root.setAttribute("data-theme-pref", stored);
+          } else {
+            root.setAttribute("data-theme-pref", "system");
+          }
+        } catch (error) {
+          /* localStorage unavailable: fall back to system preference via CSS */
+        }
+      })();
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="site-background" aria-hidden="true">
-      <div class="site-glow site-glow-one"></div>
-      <div class="site-glow site-glow-two"></div>
-      <div class="site-grid"></div>
+    <div class="site-backdrop" aria-hidden="true">
+      <div class="backdrop-glow backdrop-glow-one"></div>
+      <div class="backdrop-glow backdrop-glow-two"></div>
+      <div class="backdrop-grid"></div>
     </div>
 
     <header class="site-header" id="site-header"></header>
 
     <main id="main-content">
-      <section id="home" class="section hero-section"></section>
+      <section id="home" class="hero-section"></section>
       <section id="about" class="section reveal"></section>
       <section id="skills" class="section reveal"></section>
       <section id="projects" class="section reveal"></section>
@@ -48,6 +83,8 @@
     </main>
 
     <footer class="site-footer" id="site-footer"></footer>
+
+    <div class="grain-overlay" aria-hidden="true"></div>
 
     <noscript>
       <div class="noscript-banner">

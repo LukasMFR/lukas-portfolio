@@ -4,7 +4,7 @@
   <defs>
     <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
       <stop offset="0%" stop-color="#0f766e" />
-      <stop offset="100%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#2dd4bf" />
     </linearGradient>
   </defs>
   <rect width="128" height="128" rx="32" fill="#09121d" />
