@@ -72,7 +72,7 @@
   --surface-3: #eef2f7;
   --text: #0e1722;
   --text-2: #475569;
-  --text-3: #6b7a8d;
+  --text-3: #5e6a78;
   --border: rgba(15, 23, 42, 0.10);
   --border-2: rgba(15, 23, 42, 0.16);
   --hairline: rgba(15, 23, 42, 0.08);
@@ -345,14 +345,14 @@ ul {
   height: 38rem;
   bottom: -16rem;
   left: -14rem;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(100, 116, 139, 0.10), transparent 70%);
   opacity: 0.7;
 }
 [data-theme="dark"] .site-glow-one {
   background: radial-gradient(circle, rgba(63, 224, 196, 0.14), transparent 66%);
 }
 [data-theme="dark"] .site-glow-two {
-  background: radial-gradient(circle, rgba(56, 89, 220, 0.16), transparent 70%);
+  background: radial-gradient(circle, rgba(45, 95, 84, 0.20), transparent 70%);
 }
 
 .site-grid {
@@ -877,9 +877,10 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  max-width: 100%;
   margin-bottom: 1.6rem;
   padding: 0.45rem 0.95rem 0.45rem 0.75rem;
-  border-radius: var(--r-pill);
+  border-radius: var(--r-lg);
   border: 1px solid var(--border);
   background: var(--surface-2);
   font-family: var(--font-mono);
@@ -990,6 +991,17 @@ main {
   position: relative;
   display: flex;
   justify-content: center;
+}
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 8% -6% -12% 6%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, var(--accent-soft-2), transparent 65%);
+  filter: blur(46px);
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
 }
 .portrait-card {
   position: relative;
@@ -2028,6 +2040,18 @@ main {
     border-right: none;
     border-left: none;
     border-bottom: 1px solid var(--border);
+  }
+  /* tablet: 2-col skills instead of the cramped 6-col bento */
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .skill-card,
+  .skill-card:nth-child(1),
+  .skill-card:nth-child(2) {
+    grid-column: span 1;
+  }
+  .skill-card:last-child:nth-child(odd) {
+    grid-column: span 2;
   }
 }
 

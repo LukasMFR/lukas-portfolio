@@ -442,7 +442,9 @@
 
       <div class="mobile-menu ${state.menuOpen ? "is-open" : ""}" id="mobile-menu"
         aria-hidden="${!state.menuOpen}" data-mobile-menu>
-        <ul class="mobile-nav-links">${mobileNavLinks}</ul>
+        <nav aria-label="${t("Main navigation", "Navigation principale")}">
+          <ul class="mobile-nav-links">${mobileNavLinks}</ul>
+        </nav>
         <div class="mobile-actions">
           ${renderThemeToggle()}
           ${renderLanguageSwitch()}
@@ -503,7 +505,8 @@
           </div>
           <h1 class="hero-title">${firstName}${surname ? `<span class="hero-surname">${surname}</span>` : ""}</h1>
           <p class="hero-lead">
-            <span class="typewriter-text" id="typewriter-target"></span><span class="typewriter-cursor" aria-hidden="true"></span>
+            <span class="sr-only">${translate(data.hero.subtitle)}</span>
+            <span class="typewriter-text" id="typewriter-target" aria-hidden="true"></span><span class="typewriter-cursor" aria-hidden="true"></span>
           </p>
           <p class="hero-description">${translate(data.hero.description)}</p>
           <div class="hero-actions">${ctas}</div>
@@ -513,7 +516,7 @@
         <div class="hero-visual">
           <div class="portrait-card">
             <div class="portrait-image-shell">
-              <img src="${data.person.profilePhoto.src}" alt="${translate(data.person.profilePhoto.alt)}" decoding="async" />
+              <img src="${data.person.profilePhoto.src}" alt="${translate(data.person.profilePhoto.alt)}" width="1600" height="2000" fetchpriority="high" decoding="async" />
             </div>
           </div>
           <div class="animoji-badge">
@@ -1099,7 +1102,13 @@
   function applyActiveNav(activeId) {
     const fallbackId = activeId || getCurrentSectionId();
     elements.header.querySelectorAll("[data-section-link]").forEach((link) => {
-      link.classList.toggle("is-active", link.dataset.sectionLink === fallbackId);
+      const active = link.dataset.sectionLink === fallbackId;
+      link.classList.toggle("is-active", active);
+      if (active) {
+        link.setAttribute("aria-current", "true");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
   }
 
